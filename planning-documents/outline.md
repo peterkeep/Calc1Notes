@@ -76,6 +76,7 @@
 
 - Intuition: compare rates of change in a race, and interlocking gears
 - x^x by using exponential and logarithmic composition (logarithmic differentiation later)
+- lots of combinations of things/functions types/rules
 
 ### Implicit Differentiation
 
@@ -102,6 +103,7 @@
 ### First Derivative Analysis
 
 - main goal is to find local extrema
+  - Rolle's Theorem -> MVT
 - FDT, use IVT to test intervals
 
 ### Second Derivative Analysis
@@ -130,20 +132,49 @@
 
 ### L'Hopital's Rule
 
+- 0/0, infinity/infinity
+- exponential stuff is important
+
 ### Newton's Method
 
 - what about secant method?
+- can I include some calculators or something?
+- accuracy discussion
 
 ## Unit 4: Antiderivatives and Integrals
 
 ### Antiderivatives
 
+- constant comes from MVT
+- graphical interpretation
+
 ### Indefinite Integrals
+
+- purely notational changes
+- dx interpretation
 
 ### Definite Integrals
 
+- purely definition and properties
+- can we use some geometry
+
 ### Riemann Sums
+
+- Left, Right approximations
+- closed forms of some sums
+  - Gauss sum, etc.
+- limit of sum
 
 ### Fundamental Theorem of Calculus
 
+- essentially this is all the proof
+- average height of function
+
 ### Substitution
+
+- show lots of types:
+  - basic
+  - fixing coefficients
+  - turn around
+  - clever ones
+  - multiple rounds of substitution

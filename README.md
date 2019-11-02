@@ -1,2 +1,2 @@
 # Calc1Notes
-Notes for a first college calculus course,
+Notes for a first college calculus course.
