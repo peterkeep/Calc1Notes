@@ -10,6 +10,6 @@
 *.snm
 *.toc
 
-# Specific Draft pdf #
-######################
-./tex/main.pdf
+# Ignore pdf's #
+################
+*.pdf
