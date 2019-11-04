@@ -1,0 +1,49 @@
+\documentclass[12pt]{book}
+
+\usepackage{amsmath, amsthm, mathtools, dsfont, amssymb}
+\usepackage[mathscr]{euscript}
+\usepackage[side,marginal]{footmisc}
+\setlength{\marginparwidth}{4cm}
+\usepackage{coursenotes}
+\usepackage[left=1cm, right=5cm, top=2cm, bottom=2cm]{geometry}
+
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+
+\title{Calculus Notes}
+\author{Peter Keep\\ Moraine Valley Community College}
+\date{\today}
+
+\begin{document}
+
+\newgeometry{margin=1in}
+\maketitle
+
+\tableofcontents
+\restoregeometry
+
+\setcounter{chapter}{-1}
+\chapter{Preliminary Materials}
+
+\input{./0_preliminary/intro.tex}
+
+\newpage
+
+\input{./0_preliminary/1_functions.tex}
+
+\chapter{Limits}
+
+\input{./1_limits/intro.tex}
+
+\chapter{The Derivative}
+
+\input{./2_derivatives/intro.tex}
+
+\chapter{Analysis and Applications of the Derivative}
+
+\input{./3_applications/intro.tex}
+
+\chapter{Integrals}
+
+\input{./4_integrals/intro.tex}
+
+\end{document}
