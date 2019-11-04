@@ -8,7 +8,7 @@
 
 ## Unit 1: Limits
 
-### Intro To Limits
+### Definitions of Limits
 
 - epsilon-delta definition introduction
   - discussion of distance
