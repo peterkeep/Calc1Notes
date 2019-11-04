@@ -10,3 +10,6 @@
 *.snm
 *.toc
 
+# Specific Draft pdf #
+######################
+main.pdf
