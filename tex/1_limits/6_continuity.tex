@@ -1,0 +1,143 @@
+\section{Continuity}
+
+Earlier, we classified polynomial and rational functions as ``easy'' limits (we could just check the function outputs for the limits). We'll expand that definition of ``easy'' limits here with a more formal definition of continuity.\\
+
+What does continuity mean? What does it look like? What does it look like to ``break'' continuity?
+
+\begin{defn}{Continuity at a Point}
+A function is continuous at a point $a$ if $\dlim_{x\to a}f(x) = f(a)$. If this equality doesn't hold, we'll call $a$ a \textbf{point of discontinuity}.
+\end{defn}
+
+\begin{note}{Note}
+The the continuity limit equality to hold, we need three things to be true:
+\begin{enumerate}
+  \item $f(a)$ is defined ($a$ is in the domain of $f$)
+  \item $\dlim_{x\to a}f(x)$ exists ($\dlim_{x\to a^-} f(x) = \dlim_{x\to a^+} f(x)$)
+  \item $\dlim_{x\to a}f(x) = f(a)$ (limit and function value are the same).
+\end{enumerate}
+\end{note}
+
+This definition is a lot more robust than it seems. Using limits to define continuity adds a lot of depth to a concept that we don't normally consider that interesting.\\
+
+\textit{Have students design functions that are either weird looking but continuous or break the definition of continuity somewhere.}
+
+\begin{thm}{Properties of Continuity}
+If two functions $f$ and $g$ are both continuous at $a$, then the following functions are also continuous at $a$:
+  \begin{enumerate}
+    \item $f+g$
+    \item $f-g$
+    \item $fg$
+    \item $f/g$ as long as $g(a)\neq 0$
+    \item $cf$ for some coefficient $c$
+    \item $(f(x))^n$ for $n>0$
+  \end{enumerate}
+\end{thm}
+
+This is relatively easy to prove once we know that limits are preserved across all of these operations.
+
+\begin{note}{Note}
+Polynomial functions are continuous for all $x$, and rational functions are continuous wherever they don't divide by 0.
+\end{note}
+Also, if $g$ is continuous at $a$ and $f$ is continuous at $g(a)$, the function $f\circ g$ is continuous at $a$.
+
+
+For these composite functions to be continuous, we should at least talk about how limits act with composite functions in general.
+
+\begin{thm}{Limits of Composite Functions}
+  \hspace{1cm}
+  \begin{enumerate}
+    \item If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$ then $\dlim_{x\to a} f(g(x)) = f\left(\dlim_{x\to a} g(x)\right)$.
+    \item Even if $g$ is not continuous if $\dlim_{x\to a} g(x)=L$ and $f$ is continuous at $L$, then $\dlim_{x\to a}f(g(x))=f\left( \dlim_{x\to a} g(x)\right)$.
+  \end{enumerate}
+\end{thm}
+
+\begin{note}{Examples}
+Evaluate the following limits of composite functions:
+\begin{multicols}{3}
+  $\dlim_{x\to0} \left(\dfrac{x^4-6x^2+2}{x^6+3x^4+1}\right)^8$
+
+  $\dlim_{x\to3} \sin\left(\dfrac{x^2-9}{x-3}\right)$
+
+  $\dlim_{x\to3} \sqrt{x^2-5}$
+\end{multicols}
+Notice that in these examples, we have composition of functions where the ``inside'' functions are rational or polynomial, and so are continuous (wherever the denominator is not 0). So the insides are ``easy'' limits. The ``outside'' functions are $x^8$, $\sin(x)$, and $\sqrt{x}$ respectively. We know the first one is continuous, we're probably pretty sure that $\sin(x)$ is continuous (based on what we knew about continuity before today), but the $\sqrt{x}$ function is a bit different. We've been using this composition rule for the square root function, but we should make sure things are looking ok still.
+\end{note}
+
+\subsection*{Continuity on an Interval}
+
+We'll focus on functions being continuous not just at a single, carefully picked point, but on a whole interval. This is a weird problem with the square root function:\\
+
+Is $f(x) = \sqrt{x}$ continuous at $x=0$?
+
+\begin{defn}{Coninuity at Endpoints}
+Sometimes this is called one-sided continuity. A function $f$ is continuous from the left (or left-continuous) at $a$ if $\dlim_{x\to a^-}f(x) = f(a)$. It is continuous from the right (or right-continuous) at $a$ if $\dlim_{x\to a^+}f(x) = f(a)$.
+\end{defn}
+
+This assures us that even thought $\dlim_{x\to 0}\sqrt{x}$ does not exist (since the left side does not exist), we can still talk about $\sqrt{x}$ being continuous from the right at that point.
+
+\begin{defn}{Continuity on an Interval}
+A function $f$ is continuous on the interval $I$ if for every point $c\in I$, $f$ is continuous at $c$. If $I$ includes its endpoints, then $I$ just needs to be continuous from the left or right (whichever is appropriate).
+\end{defn}
+
+\textit{Draw some piecewise functions to talk about continuity and intervals of continuity.}\\
+
+What if we extend this from just intervals to sets of numbers? Can a function be continuous on $\mathbb{Z}$? $\mathbb{Q}$? Its domain?\\
+
+\textit{Show off the Interesting Example.}
+
+\subsection*{Let's Circle Back to Functions with Roots}
+
+We know that limits work out pretty easily for the most part with limits, as long as we're careful with negatives and even roots. So we know $\dlim_{x\to a} (f(x))^{n/m} = \left(\dlim_{x\to a}f(x)\right)^{n/m}$, with the restriction that $f(x)\geq 0$ if $m$ is even (and $n/m$ is in lowest terms). So as long as $m$ is odd, we don't have to worry about anything: if $f(x)$ is continuous at $a$, then the root is too.\\
+
+If $m$ is even, then we definitely need to make sure that $f(x)\geq 0$.
+
+\begin{thm}{Statement/Claim}
+If $f$ is continuous at $a$ and $f(a)>0$, then $f(x)>0$ for all values $x$ in the domain of $f$ in some interval around $a$.
+\end{thm}
+
+\begin{note}{Note}
+We're going to be super petty about how we pick the interval. Just keep making the interval around $a$ smaller and smaller.
+\end{note}
+
+So all of this to say:
+
+\begin{thm}{Continuity of Functions with Roots}
+Assume that $m$ and $n$ are positive integers with no common factors (so $n/m$ is reduced).
+\begin{itemize}
+  \item If $m$ is odd, then $(f(x))^{n/m}$ is continuous whenever $f$ is continuous.
+  \item If $m$ is even, then $(f(x))^{n/m}$ is continuous whenever $f$ is continuous and $f(x)>0$.
+\end{itemize}
+\end{thm}
+
+\begin{note}{Examples}
+When are the following functions continuous?
+
+$f(x)=\sqrt{16-x^2}$ \quad $g(x) = \sqrt{x^3-8}$ \quad $h(x) = (x^2+2x-8)^{2/3}$
+\end{note}
+
+\subsection*{Transcendental Functions}
+
+\begin{defn}{Trigonometric Functions}
+We've used the squeeze theorem on a couple of trigonometric functions to show that some specific limits were the same as the function values at those points.\\
+
+All trigonometric functions (sin, cos, tan, sec, csc, cot) are all continuous on their domains.
+\begin{note}{Note}
+We still get screwed up at asymptotes, but the functions aren't defined there anyways.
+\end{note}
+\end{defn}
+
+\begin{defn}{Exponential Functions}
+It feels like any exponential function defined in the form $f(x)=b^x$ ($b>0, b\neq1$) should be continuous, but we need to formalize the function itself. We know what $b^x$ means for $x\in\mathbb{Q}$, but what about irrational exponents? What does $4^{\sqrt{2}}$ mean?\\
+
+For now, we'll just say that it's continuous on its domain without showing it.
+\end{defn}
+
+\subsection*{Intermediate Value Theorem}
+
+This is used a lot to make sure that some solution to an equation $f(x)=L$ actually exists. Sometimes we're trying to make sure it exists before we find it, and other times we just care about its existence.
+
+\textit{Illustrate with crossing the room. Example of people leaving during a fire drill.}
+
+\begin{thm}{The Intermediate Value Theorem}
+Suppose $f$ is continuous on the interval $[a,b]$ and $L$ is some real number such that $f(a)<L<f(b)$ or $f(b)<L<f(a)$. Then there exists at least one number $c\in(a,b)$ such that $f(c)=L$.
+\end{thm}
