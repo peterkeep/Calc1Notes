@@ -6,55 +6,69 @@
 \ProvidesPackage{classnotes}
   [2011/01/11 v0.01 LaTeX package formatting class notes]
 
-  % Framed package
-  \usepackage{mdframed}
-  \usepackage{xcolor}
+% Framed package
+\usepackage{mdframed}
+\usepackage{xcolor}
 
-  %Define margins
-  \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
-  \let\endchangemargin=\endlist
+\usepackage{ifthen}
+
+%Define margins
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
 
 
-  % Definitions
-  \newenvironment{defn}[1]{\begin{description}
-  \item [#1:]
-  \begin{description}
-  \item[]}
-  {\end{description}
-  \end{description}}
+% Definitions
+\newenvironment{defn}[1]{\begin{description}
+\item [#1:]
+\begin{description}
+\item[]}
+{\end{description}
+\end{description}}
 
-  % Theorems
-  \newenvironment{thm}[1]{\begin{mdframed}[backgroundcolor=gray!30] \begin{description}
-  \item [#1:]
-  \begin{description}
-  \item[]}
-  {\end{description}
-  \end{description}\end{mdframed}}
+% Theorems
+\newenvironment{thm}[1]{\begin{mdframed}[backgroundcolor=gray!30] \begin{description}
+\item [#1:]
+\begin{description}
+\item[]}
+{\end{description}
+\end{description}\end{mdframed}}
 
-  % Notes
-  \newenvironment{note}[1]
-  {\begin{changemargin}{0.5in}{0.5in}\begin{description}
-  \item [ \textit{#1:}]
-  \begin{description}
-  \item}
-  {\end{description}
-  \end{description}\end{changemargin}}
+% Notes
+\newenvironment{note}[1]
+{\begin{changemargin}{0.5in}{0.5in}\begin{description}
+\item [ \textit{#1:}]
+\begin{description}
+\item}
+{\end{description}
+\end{description}\end{changemargin}}
 
-  % Proof
-  \newenvironment{prf}[1]{%
-  \newcommand{\prooftitle}{#1}%
-  \begin{changemargin}{0.5in}{0.5in}\begin{description}
-  \item [ \ifthenelse{\equal{\prooftitle}{}}{\textit{Proof:} }{\textit{Proof of #1}:}]
-  \begin{description}
-  \item}
-  {\eop\end{description}
-  \end{description}\end{changemargin}}
+% End of Proof
+\newcommand{\eop}{\raisebox{-0.3ex}{/\!\!/}}
 
-  % Sidebar
-  \newenvironment{sidebar}[1]
-  {\begin{changemargin}{0.5in}{0.5in}\begin{mdframed}[backgroundcolor=gray!30]\begin{description}
-  \item [ \textit{#1:}]
-  \begin{description}
-  \item}
-  {\end{description}
-  \end{description}\end{mdframed}\end{changemargin}}
+% Proof
+\newenvironment{prf}[1]{%
+\newcommand{\prooftitle}{#1}%
+\begin{changemargin}{0.5in}{0.5in}\begin{description}
+\item [ \ifthenelse{\equal{\prooftitle}{}}{\textit{Proof:} }{\textit{Proof of #1}:}]
+\begin{description}
+\item}
+{\eop\end{description}
+\end{description}\end{changemargin}}
+
+% Sidebar
+\newenvironment{sidebar}[1]
+{\begin{changemargin}{0.5in}{0.5in}\begin{mdframed}[backgroundcolor=gray!30]\begin{description}
+\item [ \textit{#1:}]
+\begin{description}
+\item}
+{\end{description}
+\end{description}\end{mdframed}\end{changemargin}}
+
+%better limits
+\newcommand{\dlim}{\displaystyle \lim}
+
+%better integrals
+\newcommand{\dint}{\displaystyle \int}
+
+%better sums
+\newcommand{\dsum}{\displaystyle \sum}

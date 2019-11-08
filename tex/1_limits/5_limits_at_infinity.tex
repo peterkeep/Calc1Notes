@@ -1,0 +1,174 @@
+
+We can also use $\infty$ as a symbol to indicate that the independent variable is either increasing or decreasing without bound: $x\to\infty$ and $x\to-\infty$. Essentially, this limit gets at the end behavior of a function.
+
+\begin{defn}{Limits at Infinity}
+If $f(x)$ becomes arbitrarily close to a finite number $L$ for all sufficiently large and positive (or negative) $x$, then we write
+\[ \lim_{x\to\pm\infty}f(x)=L.\]
+In either case, the line $y=L$ is a \textbf{horizontal asymptote}.
+\end{defn}
+
+\begin{note}{Example}
+We know that $f(x)=\arctan(x)$ (or $f(x)=\tan^{-1}(x)$) has horizontal asymptotes at $y=\pm \pi/2$. What limit statements represent those asymptotes?
+\[\lim_{x\to-\infty}\tan^{-1}(x)=-\pi/2 \hspace{2cm} \lim_{x\to\infty}\tan^{-1}(x)=\pi/2\]
+\end{note}
+
+\begin{note}{Try Some More}
+Evaluate the following limits:
+\begin{multicols}{3}
+\begin{enumerate}
+  \item $\dlim_{x\to-\infty} \left( 2+\dfrac{10}{x^2}\right)$
+  \item $\dlim_{x\to\infty} \left(5+\dfrac{\sin x}{\sqrt{x}}\right)$
+  \item $\dlim_{x\to\infty} \left(\dfrac{x+6}{x^2-5x}\right)$
+\end{enumerate}
+\end{multicols}
+\end{note}
+
+What happens if there isn't a horizontal asymptote?
+
+\begin{defn}{Infinite Limits at Infinity}
+If $f(x)$ becomes arbitrarily small/large as $x$ becomes arbitrarily small/large, then we write $\dlim_{x\to\pm\infty}f(x)=\pm\infty$.
+\end{defn}
+
+There may be other ways that these limits at infinity do not exist. Consider: $\dlim_{x\to\infty} \sin x$.
+
+\begin{thm}{Limits at Infinity of Powers and Polynomials}
+Let $n$ be a positive integer and let $p$ be the polynomial $p(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_2x^2+a_1x+a_0$ where $a_n\neq0$.
+\begin{enumerate}
+  \item $\dlim_{x\to\pm\infty}x^n=\infty$ when $n$ is even
+  \item $\dlim_{x\to\infty}x^n=\infty$ and $\dlim_{x\to-\infty}x^n=-\infty$ when $n$ is odd
+  \item $\dlim_{x\to\pm\infty}x^{-n}=\dlim_{x\to\pm\infty}\dfrac{1}{x^n}$
+  \item $\dlim_{x\to\pm\infty} p(x)=\dlim_{x\to\pm\infty} a_nx^n = \pm\infty$ depending on degree and leading coefficient.
+\end{enumerate}
+
+\end{thm}
+
+\begin{prf}{Part 4}
+Consider the polynomial $p(x) =a_nx^n+a_{n-1}x^{n-1}+\cdots+a_2x^2+a_1x+a_0$ where $a_n\neq0$. Factor $x^n$ out:\\
+$p(x) = x^n\left(a_n+a_{n-1}\dfrac{x^{n-1}}{x^n}+ \cdots + a_2\dfrac{x^2}{x^n} + a_1\dfrac{x}{x^n}+a_0\dfrac{1}{x^n}\right)$\\
+$= x^n\left(a_n+\dfrac{a_{n-1}}{x}+ \cdots + \dfrac{a_2}{x^{n-2}} + \dfrac{a_1}{x^{n-1}}+\dfrac{a_0}{x^n}\right)$\\
+
+Take a limit of $p(x)$ as $x\to\pm\infty$:
+
+\begin{align*}
+\dlim_{x\to\pm\infty}p(x) & = \dlim_{x\to\pm\infty} x^n\left(a_n+\dfrac{a_{n-1}}{x}+ \cdots + \dfrac{a_2}{x^{n-2}} + \dfrac{a_1}{x^{n-1}}+\dfrac{a_0}{x^n}\right)\\
+&= \dlim_{x\to\pm\infty} x^n \cdot \dlim_{x\to\pm\infty} \left(a_n+\dfrac{a_{n-1}}{x}+ \cdots + \dfrac{a_2}{x^{n-2}} + \dfrac{a_1}{x^{n-1}}+\dfrac{a_0}{x^n}\right)\\
+& =  \dlim_{x\to\pm\infty} x^n \cdot \dlim_{x\to\pm\infty} (a_n)\\
+& = \dlim_{x\to\pm\infty} a_n x^n
+\end{align*}
+Note that each rational function $\to 0$ due to the third statement in the above theorem. Thus, only the first term has any impact on the limit of a polynomial.
+\end{prf}
+
+This is is a proof of something we've known for a while: we can judge the end behavior of a polynomial by the degree and the sign of the leading coefficient.
+\begin{center}
+\begin{tabular}{ccc}
+    & \textbf{Even} &   \textbf{Odd}\\
+  \textbf{Positive} & $\nwarrow \nearrow$ & $\swarrow \nearrow$\\
+  \textbf{Negative} & $\swarrow \searrow$ & $\nwarrow \searrow$
+\end{tabular}
+\end{center}
+
+\begin{thm}{End Behavior for Rational Functions}
+Suppose $f(x)=\dfrac{p(x)}{q(x)}$ is a rational function where:
+$p(x) = a_mx^m+a_{m-1}x^{m-1}+\cdots+a_2x^2+a_1x+a_0$ and\\
+$q(x) = b_nx^n+b_{n-1}x^{n-1}+\cdots+b_2x^2+b_1x+b_0$\\
+
+Then we have a few cases/possibilities:
+\begin{enumerate}
+  \item If $m<n$, then $\dlim_{x\to\pm\infty} f(x)=0$, which means that $y=0$ is a horizontal asymptote.
+  \item If $m=n$, then $\dlim_{x\to\pm\infty} f(x) = \dfrac{a_m}{b_n}$ (and so there is a horizontal asymptote again).
+  \item If $m>n$, then $\dlim_{x\to\pm\infty} f(x)=\pm\infty$, which means that is no horizontal asymptote. We can figure out the limit by investigating $\dlim_{x\to\pm\infty} \dfrac{a_m}{b_n} x^{m-n}$.
+  \begin{itemize}
+    \item If $m=n+1$, then there is an oblique or slant asymptote.
+  \end{itemize}
+\end{enumerate}
+\end{thm}
+
+Most of this is stuff we already knew from algebra. Now, though, we don't need to worry about the specific cases. We can just apply the theorem about polynomials to the numerator and denominator to investigate the new limit.\\
+
+One of the weird things we did in Algebra was finding oblique or slant asymptotes.
+
+\subsection*{Slant Asymptotes}
+
+We noticed that slant or oblique asymptotes show up when the degree on top of the rational function was larger than the degree on the bottom by one. EX: $f(x)=\dfrac{2x^2+6x-2}{x+1}$.\\
+
+We used long division and then disregarded the remainder. Here's why:\\
+
+$f(x) = \dfrac{2x^2+6x-2}{x+1} = 2x+4- \dfrac{6}{x+1}$\\
+
+$\dlim_{x\to\infty} f(x) = \dlim_{x\to\infty} 2x+4- \dfrac{6}{x+1} = (2x+4)-(0)$\\
+
+So the ``end behavior'' of this rational function is really just the linear piece, since the limit of the remainder will just go to 0 anyways. What happens in the degree on top is bigger by 2? More?
+
+\subsection*{Some More Weird Limits at Infinity}
+
+Rational functions like the ones we've seen are relatively familiar, but what happens when we move away from rational functions into similar types of functions?\\
+
+\begin{note}{Example}
+Determine the end behavior of
+\[f(x) = \frac{8x^3-4x^2+5x-1}{\sqrt{4x^6+2x^4+1}}.\]
+
+Let's treat each ``end'' separately. We'll look at $\dlim_{x\to\infty}f(x)$ first before we look at $\dlim_{x\to-\infty}f(x)$.\\
+
+$\dlim_{x\to\infty} \frac{8x^3-4x^2+5x-1}{\sqrt{4x^6+2x^4+1}}$\\
+
+We have to be careful about the denominator, since the square root can mess things up. Since $x\to\infty$, we know that $x>0$, so we don't need to worry about square roots of negatives.\\
+
+$\dlim_{x\to\infty} \frac{8x^3-4x^2+5x-1}{\sqrt{4x^6+2x^4+1}}= \frac{\dlim_{x\to\infty}8x^3-4x^2+5x-1}{\dlim_{x\to\infty}\sqrt{4x^6+2x^4+1}}$\\
+
+$= \frac{\dlim_{x\to\infty}8x^3}{\sqrt{\dlim_{x\to\infty}4x^6+2x^4+1}} =\dfrac{\dlim_{x\to\infty}8x^3}{\sqrt{\dlim_{x\to\infty}4x^6}} = \dfrac{\dlim_{x\to\infty}8x^3}{\dlim_{x\to\infty}\sqrt{4x^6}}$\\
+
+$= \dfrac{\dlim_{x\to\infty}8x^3}{\dlim_{x\to\infty}2x^3} = \dlim_{x\to\infty} \dfrac{8x^3}{2x^3} = \dlim_{x\to\infty} 4 = 4$\\
+
+So we've found, through a lot of manipulation of limits, that $\dlim_{x\to\infty} f(x) = 4$.\\
+
+Let's check out the other side: $\dlim_{x\to-\infty} \frac{8x^3-4x^2+5x-1}{\sqrt{4x^6+2x^4+1}}$.\\
+
+Again, we need to be careful about the denominator. Since $x\to-\infty$, we know that $x<0$. Since all of the exponents under the square root are even, notice that the radicand will be positive (since negative numbers multiplied an even number of times will be positive). That's a good thing! No problems! We'll keep in mind, though, that the denominator will be positive.\\
+
+$\dlim_{x\to-\infty} \frac{8x^3-4x^2+5x-1}{\sqrt{4x^6+2x^4+1}} = \dfrac{\dlim_{x\to-\infty}8x^3-4z^2+5x-1}{\dlim_{x\to-\infty}\sqrt{4x^6+2x^4+1}}$\\
+
+$=\dfrac{\dlim_{x\to-\infty} 8x^3}{\sqrt{\dlim_{x\to-\infty} 4x^6-2x^4+1}} = \dfrac{\dlim_{x\to-\infty} 8x^3}{\sqrt{\dlim_{x\to-\infty}4x^6}}$
+
+\textbf{NOTE:} Before we move forward and get sloppy, notice that the square root (denominator) will be positive. When we pull the square root apart, if we leave $x\to-\infty$ when we bring it out, it'll become negative. So let's change the denominator: $\sqrt{\dlim_{x\to-\infty}4x^6} = \dlim_{x\to\infty}2x^3$.\\
+
+If we want to do the same trick as before where we bring the limit to the front of the fraction, they need to be the same limit. So we need to change the numerator too. $\dlim_{x\to-\infty} 8x^3 = \dlim_{x\to\infty}-8x^3$.\\
+
+So our limit with these changes: $\dfrac{\dlim_{x\to\infty}-8x^3}{\dlim_{x\to\infty}2x^3}$. We can go from here now easily.\\
+
+$\dlim_{x\to\infty}\dfrac{-8x^3}{2x^3}=\dlim_{x\to\infty}-4=-4$\\
+
+So we've found, through some weird manipulation of limits, that $\dlim_{x\to-\infty} f(x) = -4$.
+\end{note}
+
+Our textbook uses a different method in an example similar to this (Example 5). Division and factoring. If they want to see it again, try it with any other weird functions with square roots.
+
+\begin{defn}{End Behavior of Some Transcendental Functions}
+  \hspace{2cm}
+\begin{multicols}{2}
+$\dlim_{x\to \infty} e^x = \infty$\\
+
+$\dlim_{x\to \infty} e^{-x} = 0$\\
+
+$\dlim_{x\to \infty} \ln x = \infty$\\
+
+$\dlim_{x\to -\infty} e^x = 0$\\
+
+$\dlim_{x\to -\infty} e^{-x} = \infty$\\
+
+$\dlim_{x\to 0^+} \ln x = -\infty$\\
+
+\end{multicols}
+\end{defn}
+
+Note that some trig functions have some strange nonexistent limits at infinity.\\
+\textbf{Example:} $\dlim_{x\to\pm\infty} \sin x$ does not exist
+
+\subsection*{Squeeze Theorem Example}
+
+Find $\dlim_{x\to\infty}\dfrac{\cos^2(2x)}{3-2x}$. Note that $0\leq \cos^2(2x)\leq 1$ for all $x$.\\
+
+\[\dfrac{0}{3-2x}\leq \dfrac{\cos^2(2x)}{3-2x}\leq\dfrac{1}{3-2x}\]
+\[ 0 \leq \dfrac{\cos^2(2x)}{3-2x} \leq \dfrac{1}{3-2x} \]
+\[ \dlim_{x\to\infty} 0 = 0 = \dlim_{x\to\infty} \dfrac{1}{3-2x} \]
+
+So by the Squeeze Theorem, $\dlim_{x\to\infty} \dfrac{\cos^2(2x)}{3-2x}=0$

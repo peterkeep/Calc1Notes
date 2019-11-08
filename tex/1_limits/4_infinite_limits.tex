@@ -1,0 +1,51 @@
+\section{Infinite Limits}
+
+
+Two types of limits: infinite limits and limits at infinity.
+
+\subsection*{Infinite Limits}
+
+\textit{Look at the graph of $f(x) = \dfrac{1}{x-1}$. Find $\dlim_{x\to1^+} f(x)$.}
+
+Since the graph diverges off to infinity as $x\to1^+$, we say that $\dlim_{x\to1^+} \frac{1}{x-1} = \infty$ or that $f(x) = \dfrac{1}{x-1}\to \infty$ as $x\to 1^+$. \textbf{Be careful} with this notation - make note that since $\infty \notin \mathbb{R}$, the limit doesn't actually exist even though we're saying it is equal to infinity. Really what we're doing is using the symbol $\infty$ to describe the way in which the limit fails to exist.
+
+\begin{note}{Note}
+If we change the limit to approach 1 from the left, we get the result $\dlim_{x\to1^-} \frac{1}{x-1} = -\infty$.\\
+
+Does $\dlim_{x\to 1} \frac{1}{x-1}$ exist? Can we describe it using $\infty$? What if we were looking for $\dlim_{x\to1} \frac{1}{(x-1)^2}$? Since both the left and right sided limits $\to \infty$, we can say that $\dlim_{x\to1} \frac{1}{(x-1)^2}=\infty$. Again, this limit does not exist, but we can still use notation to explain its behavior.
+\end{note}
+
+\begin{defn}{One-Sided Infinite Limits}
+Suppose $f$ is defined for all $x$ near $a$ where $x>a$. If $f(x)$ because arbitrarily large for all $x$ sufficiently close to (but greater than) $a$, we say $\dlim_{x\to a^+}f(x)=\infty$.\\
+
+The rest of the one-sided limits, $\dlim_{x\to a^+}f(x)=-\infty$, $\dlim_{x\to a^-}f(x)=\infty$, and $\dlim_{x\to a^-}f(x)=-\infty$ all act similarly.
+\end{defn}
+
+Each of these infinite limts represent \textbf{vertical asymptotes}.
+
+\subsection*{Finding Infinite Limits Analytically}
+
+The main thing that we can notice here is that when we have rational functions in the form $f(x)=a/b$, the function value will grow arbitrarily large in size (positive or negative) if $a$ stays relatively constant and $b$ approaches 0.\\
+
+Finding out if the limit diverges to $\infty$ or $-\infty$ is as easy as checking signs on one sided limits.
+
+\begin{note}{Examples}
+Find the vertical asymptote and analyze both one-sided limits at the asymptote for the following functions:
+\begin{multicols}{2}
+  \begin{enumerate}
+    \item $f(x) = \dfrac{2-5x}{x-3}$
+    \item $f(x) = \dfrac{x^2-4x+3}{x^2-1}$
+  \end{enumerate}
+\end{multicols}
+\end{note}
+
+\begin{note}{Another Example}
+Analyze the following one-sided limits:
+\begin{multicols}{2}
+  \begin{enumerate}
+    \item $\dlim_{\theta\to0^+} \cot \theta$
+    \item $\dlim_{\theta\to0^-} \cot \theta$
+  \end{enumerate}
+\end{multicols}
+Remember that $\cot \theta = \cos \theta / \sin \theta$.
+\end{note}

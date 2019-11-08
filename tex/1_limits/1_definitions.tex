@@ -1,87 +1,59 @@
 \section{Definitions of Limits}
 
-We begin with the precise definition of a limit.
-
-\begin{defn}{Precise Definition of a Limit}
-  Suppose $f$ is some function defined at all real $x$-values near $x=a$, except possibly at $x=a$ itself, and let $L$ be some real number. If for every $\epsilon>0$ with $|f(x)-L|<\epsilon$ there exists some $\delta>0$ where $0<|x-a|<\delta$, then we say that as $x$ approaches $a$, the limit of $f$ is $L$, or
-  \[ \lim_{x\to a} f(x) = L\]
+\begin{defn}{Limit of a Function (Early Definition)}
+Suppose the function $f$ is defined for all $x$ near some value $a$ except possibly at $a$ itself. If $f(x)$ is arbitrarily close to some value $L$ whenever $x$ is sufficiently close to $a$ (without actually equaling it), then we write
+\[\lim_{x\to a} f(x) = L\]
 \end{defn}
 
-This is a high-level definition with a lot of nuance that is not easy to take in all at once. We'll spend this section talking about ways of interpreting this definition of the limit to make it more manageable.
-
-Before we begin, let's make something clear:
-
-\begin{center}
-  \textbf{You likley don't understand the definition written above!}
-
-  \textbf{You're not expected to!}
-\end{center}
-
-Ok. So now let's start breaking that definition into parts. Here are two (of many) important things to notice:
-\begin{enumerate}
-  \item We have some absolute values floating around: $|f(x)-L|$ and $|x-a|$. We should figure out what these absolute values are really representing.
-  \item The Greek letters epsilon ($\epsilon$) and deldifferenceta ($\delta$) are attached to each of the absolute values: $|f(x)-L|<\epsilon$ and $0<|x-a|<\delta$. So we have these ``upper bounds'' on the absolute values from before.
-\end{enumerate}
-
-Let's start with trying to figure out what the absolute values are trying to tell us.
-
-In both cases, we have an absolute value of a \textit{difference} between two things (either $x-a$ or $f(x)-L$). The absolute value of a difference is really giving us some idea of \textit{distance} between things. We don't care which of the two is larger (if one is larger then the difference is positive, and if the other is larger then the difference is negative), since the absolute value removes the sign.
-
-So when we say $|x-a|$, we're really thinking about the distance between some $x$-value and the specific value $a$. And when we talk about $|f(x)-L|$, we're really thinking about the distance between some $y$-value, $f(x)$, and the specific value $L$.
-
-Now let's think about the $\epsilon$ and the $\delta$.
-
-We said that $\epsilon$ and $\delta$ were acting as ``upper bounds'' on the absolute values from before. So when we think about these in the contexts of distances, we're really thinking about a maximum distance. Since we're looking at $0<|x-a|<\delta$, we're saying that the distance between $x$ and $a$ is less than some maximum distance, called $\delta$. So $x$ and $a$ have to be closer to each other than some distance $\delta$. Similarly, since $|f(x)-L|<\epsilon$, we're saying that the distance between $f(x)$ and $L$ is less than some maximum distance $\epsilon$. Or, again, $f(x)$ and $L$ are closer to each other than $\epsilon$.
-
-That's still not super enlightening. We likely still don't have a great (or even good) idea of what that definition above means, but at least now we can see that it all hinges on this idea of what it means to be close to something.
-
-If the distance between $x$ and $a$ is less than some standard called $\delta$, we'll say that $x$ is close to $a$. And if the t distance between $f(x)$ and $L$ is less than some other standard called $\epsilon$, then we'll say that $f(x)$ is close to $L$.
-\footnote{
-  Normally we'll say that $\epsilon$ is a standard for``arbitrary closeness'' and $\delta$ is a standard for ``sufficient closeness,'' but we still have to build that original definition up more before we can think about that.
-}
-
-What we really need now is to talk through some ways that we can define ``closeness'' of two objects.
-
-\subsection*{What Does it Mean to be ``Close'' to Something?}
-
-% Image of two dots or objects or something.
-
-Are the two dots close to each other?
-
-It seems like a silly question. Take a minute to answer. Obviously there's no right or wrong answer here, since this is going to all be subjective -- it's going to depend on what you, yourself, think close means.
-
-So here's a follow-up question. How close is close enough to say the two dots are ``close?'' What is your standard of closeness? What distance do these dots need to be from each other to classify them as ``close'' to each other?
-
-Take a minute and formalize this in your head: what is the distance (be specific) that you would require before you concede that the dots are ``close'' to each other.
-
-I've heard lots of answers to this question:
+\begin{note}{Quick Notes}
+\hspace{1cm}
 \begin{itemize}
-  \item If they're within an inch of each other, they're close.
-  \item If they can fit on the same page, they're close.
-  \item If the distance between them is less than half of the total width of the page, they're close.
-  \item If they're within 10 miles of each other, they're close.
-  \item Relative to the size of the universe, we're all pretty close to each other, so yah, the dots are close.\footnote{
-    You could flip this around as well: at an atomic level, anything we can see if pretty far away from each other.
-  }
+\item Sometimes we'll write $f(x) \to L$ as $x\to a$.
+\item Limits do not have anything to do with function values, since it depends on values \textit{near} $a$.
+\item We can make $x$ ``get close to'' $a$ in two ways (from the left or from the right).
+\item We can investigate limits in three ways: graphically, numerically, and analytically.
 \end{itemize}
+\end{note}
 
-These are all wildly different standards of what it means for two things to be close to each other, and they're all valid.
-
-Now imagine this: I've asked hundreds of students these exact questions. Sometimes it's about two dots on a page, or two dots on a whiteboard, or about two objects in a classroom. And while I do see some repetition in the kinds of rules that people have to defined for themselves, most of the time I get a lot of new ones.
-
-So I've seen hundreds of rules or standards for what it means for two dots to be close to each other. If we look at the most strict standard -- the smallest distance that someone has used to define ``close'' -- it's likely pretty small. Now I want you to imagine that every person that has ever existed has had some sort of standard of ``closeness.'' That's roughly 110 billion\footnote{
-  According to prominent approximations, although this is just a guess.
-}
-standards. It's likely that the most strict standard is terribly small. These two dots that we are considering are likely not going to be classified as ``close''for everyone.
-
-How close would the dots have to be in order to be classified as ``close'' for everyone? What if there were an infinite number of people, each with their own unique standard of closeness? Now how close would the dots need to be before they could be unanimously classified as ``close?''
-
-We need some term to summarize this. ``Infinitely close'' is an alright term -- it isn't too hard for us to understand, even though we don't have a lot of experience with infinity -- but we'll use the term ``arbitrarily close.''
-
-\begin{defn}{Arbitrarily Close}
-  Two things are arbitrarily close if the distance between them is less than some arbitrarily chosen standard of closeness.
+\begin{defn}{Graphically}
+As you ``move'' closer to the $x$-value on the graph that you care about, what is happening to the $y$-values? Notice that since we only ``get close'' to $a$, we don't care about the specific function value.
 \end{defn}
 
-\subsection*{A More Intuititive Definition}
+\begin{defn}{Numerically}
+Pick $x$-values that are close to $a$ and create a table of values. What is the pattern?
+\end{defn}
 
-We've done all of this discussion to simply lead us towards a more intuitive definition of a limit.
+\section*{One-Sided Limits}
+
+\begin{defn}{Right-Sided Limit}
+If $f$ is close to $L$ whenever $x$ is close to, but greater than, $a$, then we write:
+\[ \lim_{x\to a^+} f(x)=L\]
+\end{defn}
+
+\begin{defn}{Left-Sided Limit}
+If $f$ is close to $L$ whenever $x$ is close to, but less than, $a$, then we write:
+\[ \lim_{x\to a^-} f(x)=L\]
+\end{defn}
+
+\begin{thm}{Relationship Between One and Two-Sided Limits}
+Assume $f$ is defined for all $x$ near $a$ except possibly at $a$. Then $\dlim_{x\to a} f(x) = L$ if and only if $\dlim_{x\to a^-}f(x) = L = \dlim_{x\to a^+} f(x)$.
+\end{thm}
+
+\section*{Examples}
+
+\begin{itemize}
+\item Graph a small piecewise function with a hole, but the limit existing.
+\item Graph a small piecewise function where the left side limit does not equal the right sided limit.
+\item Numerically find:
+\begin{multicols}{3}
+\begin{itemize}
+  \item $\dlim_{x\to 4} \dfrac{x-4}{\sqrt{x}-2}$
+  \item $\dlim_{x\to 1} \dfrac{\sqrt{x}-1}{x-1}$
+  \item $\dlim_{x\to 2} \dfrac{x^3-8}{4(x-2)}$
+\end{itemize}
+\end{multicols}
+\item Examine $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)$. Numerically, it looks like $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)=-1$, but it actually oscillates between $-1$ and 1.\\
+Note that when $x=\dfrac{1}{n\pi}$, we can see that  $\cos\left(\dfrac{1}{x}\right)=\cos(n\pi)$. For bigger values of $n$, we know that $x=\dfrac{1}{n\pi} \to 0$, and we can also use some basic trig knowledge to analyze what happens when $n$ is odd and when $n$ is even. So as $n$ gets bigger, it bounces back and forth between even and odd values, meaning the value of $\cos(n\pi)$ oscillates between $-1$ and $1$.\\
+
+So, show that $\dlim_{x\to0^+}\cos(1/x)$ does not exist to show that the two-sided limit does not exist.
+\end{itemize}

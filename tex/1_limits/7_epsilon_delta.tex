@@ -1,0 +1,131 @@
+\section{A Rigorous Definition of a Limit}
+
+We use a lot of buzzwords when we talk about limits: ``arbitrarily large,'' or ``infinitely small,'' or ``sufficiently close.'' For the most part, we can understand limits through illustrations and these buzzwords, but we should also build up a rigorous, mathematical definition.
+
+\begin{defn}{Limit of a Function (Early Definition)}
+Suppose the function $f$ is defined for all $x$ near some value $a$ except possibly at $a$ itself. If $f(x)$ is arbitrarily close to some value $L$ whenever $x$ is sufficiently close to $a$ (without actually equaling it), then we write
+\[\lim_{x\to a} f(x) = L.\]
+\end{defn}
+
+Let's break apart this definition into parts and try to make it a bit more formal.\\
+
+\begin{itemize}
+  \item When we talk about $f(x)$ being arbitrarily close to a value $L$ or $x$ being near some value $a$ (without touching it) we're talking about distance.
+  \begin{itemize}
+    \item $|f(x)-L|$ and $|x-a|$ have to both be really small (but not necessarily 0).
+  \end{itemize}
+  \item To make $|f(x)-L|$ arbitrarily small, we have to find some a value for $x$ that make $|x-a|$ really small.
+  \item Instead of focusing on specific $x$ values, we'll look at an $x$ value based on its distance from $a$. We'll call this distance $\delta$.
+  \item For instance, if we wanted $|f(x)-L|<0.01$ (which means they're pretty close to each other), we need to find some specific $\delta>0$ such that $|f(x)-L|<0.01$ whenever $0<|x-a|<\delta$.
+  \item If we wanted $|f(x)-L|<0.001$ (even closer together), then we need to find a different $\delta$ such that $|f(x)-L|<0.001$ whenever $0<|x-a|<\delta$.
+  \item For a limit to exist, we should be able to pick any small number (we can keep adding 0's to make the decimal smaller and smaller). So we want this to be true for any small positive number (we'll call it $\epsilon$).
+\end{itemize}
+
+\subsection*{Graphical Illustration}
+
+Show off Geogebra applet for limit definition.
+
+\begin{defn}{Limit of a Function (Precise Definition)}
+Assume that $f(x)$ exists for all $x$ in some open interval containing $a$ except possibly at $a$ itself. We say that the limit of $f(x)$ as $x$ approaches $a$ is $L$ (written $\dlim_{x\to a}f(x)=L$) if, for \textit{any} number $\epsilon>0$ there is a corresponding number $\delta>0$ such that $|f(x)-L|<\epsilon$ whenever $0<|x-a|<\delta$.
+\end{defn}
+
+\subsection*{Proving Limit Statements}
+
+Proving these limit statements using $\epsilon$'s and $\delta$'s can be tricky, so we'll break it into two parts: algebra and proof.
+
+\begin{enumerate}
+  \item \textbf{Find} $\delta$. Let $\epsilon$ be an arbitrary positive number. Use the inequality $|f(x)-L|<\epsilon$ to try to find a condition in the form of $|x-a|<\delta$ where $\delta$ is something that depends on $\epsilon$.
+  \item \textbf{Write the proof.} For any $\epsilon>0$, assume that $0<|x-a|<\delta$ and use the stuff you found in step 1 to prove $|f(x)-L|<\epsilon$.
+\end{enumerate}
+
+\subsection*{Examples}
+
+\begin{enumerate}
+  \item Prove that $\dlim_{x\to3}(2x-8)=-2$.\\
+
+  \textit{First, find $\delta$.} Here, we can see that $a=3$ and $L=2$. So we need need to assume $\epsilon>0$ and use $|(2x-8)-(-2)|<\epsilon$ to get something in the form $|x-3|<\delta$.\\
+
+  $|(2x-8)-(-2)| = |2x-6| = |2(x-3)| = 2|x-3|$.\\
+  So, if $|(2x-8)-(-2)|<\epsilon$, then $2|x-3|<\epsilon$.\\
+  So then $|x-3|<\dfrac{\epsilon}{2}$.\\
+  So we'll pick $\delta=\epsilon/2$.
+
+  \begin{prf}{}
+  Let $\epsilon>0$ be given and assume that $0<|x-3|<\delta$ where $\delta=\epsilon/2$. We want to show that $|(2x-8)-(-2)|<\epsilon$ for all $x$ such that $0<|x-3|<\delta$.\\
+
+  $|(2x-8)-(-2)| = |2x-6| = 2|x-3|$. Since $|x-3|<\delta = \epsilon/2$, we can say that $2|x-3|<2\left(\dfrac{\epsilon}{2}\right) = \epsilon$. Since $2|x-3| = |(2x-8)-(-2)|$, we have shown that $|(2x-8)-(-2)|<\epsilon$.\\
+
+  So, for any $\epsilon>0$, we have $|f(x)-L| = |(2x-8)-(-2)|<\epsilon$ whenever $0<|x-3|<\delta$ as long as $0\leq\delta\leq\epsilon/2$.\\
+  Thus, $\dlim_{x\to 4} (2x-8)=-2$.
+  \end{prf}
+
+
+\item Prove that $\dlim_{x\to1}(3x+1)=4$.\\
+
+$\delta = \epsilon/3$.
+
+\begin{prf}{}
+$|3x+1-4|=|3x-3|=3|x-1|<3\delta = \epsilon$.
+\end{prf}
+\end{enumerate}
+
+\subsection*{Proving Some Limit Laws}
+
+We can use this precise definition of limits to prove some of the properties of limits that we already know. Let's look at one:
+
+\subsection{The Limit of a Sum is the Sum of the Limits}
+
+We know that $\dlim_{x\to a} (f(x)+g(x)) = \dlim_{x\to a}f(x)+\dlim_{x\to a} g(x)$ as long as those limits exist. Can we prove that though?
+
+\begin{defn}{Triangle Inequality}
+For all real numbers $x$ and $y$, $|x+y|\leq|x|+|y|$.\\
+
+This property comes from side lengths of a triangle: $c\leq a+b$. You can use vector addition to show that the hypotenuse is the vector sum of the two legs.\\
+
+We'll use this to help set up the proof that we need.
+\end{defn}
+
+\begin{prf}{Limit Law for Sums}
+Let $\epsilon>0$ and $\dlim_{x\to a}f(x)=L$. Note that since $\epsilon>0$ is just an arbitrary number, $\dfrac{\epsilon}{2}>0$ is also arbitrary.\\
+
+Based on our definition of limits, this means that there is some number $\delta_1>0$ such that $|f(x)-L|<\dfrac{\epsilon}{2}$ whenever $0<|x-a|<\delta_1$.\\
+
+We can do the same thing for $g(x)$. Let $\dlim_{x\to a}g(x)=M$, which means that there is some number $\delta_2$ such that $|g(x)-M|<\dfrac{\epsilon}{2}$ whenever $0<|x-a|<\delta_2$.\\
+
+So now we have two requirements: $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$. So what we want to do is pick an even smaller interval: make $\delta$ be the smaller between $\delta_1$ and $\delta_2$. Since $\delta\leq\delta_1$ and $\delta\leq\delta_2$, then the setup $0<|x-a|<\delta$ works to make sure that $|f(x)-L|<\dfrac{\epsilon}{2}$ and $|g(x)-M|<\dfrac{\epsilon}{2}$.
+
+Ok, here's our setup then: assume that $0<|x-a|<\delta$. Then:\\
+
+\begin{align*}{ll}
+  |\left(f(x)+g(x)\right) - (L+M)| & = |(f(x)-L)+(g(x)-M)|\\
+  & \leq |f(x)-L| + |g(x)-M|\\
+  &< \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon
+\end{align*}
+So, for any $\epsilon>0$, we have shown that if $0<|x-a|<\delta$ then $|(f(x)+g(x))-(L+M)|<\epsilon$ which means that $\dlim_{x\to a}(f(x)+g(x))=L+M$. But $\dlim_{x\to a}f(x)=L$ and $\dlim_{x\to a}g(x)=M$ and so $\dlim_{x\to a}(f(x)+g(x)) \dlim_{x\to a}f(x)+\dlim_{x\to a}g(x)$.
+\end{prf}
+
+\subsection*{Infinite Limits}
+
+Let's just look at a two-sided infinite limit. We won't focus on one-sided ones, but we'll look at the special case where both left and right sided limits approach $\infty$.\\
+
+We're looking at places $a$ where $f(x)$ grows arbitrarily large when $x$ approaches $a$.
+
+\begin{defn}{Two-Sided Infinite Limit}
+The infinite limit $\dlim_{x\to a}f(x) = \infty$ means that for any positive number $N$, there exists a $\delta>0$ such that $f(x)>N$ whenever $0<|x-a|<\delta$.
+\end{defn}
+
+Essentially, we'll keep picking REALLY big values for $N$ and we can always make our function values get bigger than that by moving $x$ closer to $a$.
+
+Let's look at $\dlim_{x\to 2} \dfrac{1}{(x-2)^2}$. Investigate.
+
+We're pretty sure this limit goes to $\infty$. Let's try proving it.\\
+
+\textit{First find $\delta$}. Here, we'll try to use $\dfrac{1}{(x-2)^2}>N$ to get something of the form $|x-2|<\delta$ for some $\delta$ that we'll define in terms of $N$.\\
+
+If $\dfrac{1}{(x-2)^2}>N$ then $(x-2)^2<\dfrac{1}{N}$. Then take the square root of everything. $|x-2|<\dfrac{1}{\sqrt{N}}$. So let $\delta=\dfrac{1}{\sqrt{N}}$. Notice that if we make $N$ bigger, $\delta$ gets smaller. This means that the ``higher'' we want our funtion values to go, the closer $x$ gets to $2$.
+
+\begin{prf}{Infinite Limit}
+Supposed $N>0$ is given. Let $\delta=\dfrac{1}{\sqrt{N}}$. Now assume that $0<|x-2|<\delta=\dfrac{1}{\sqrt{N}}$. Then $(x-2)^2<\dfrac{1}{N}$. Take the reciprocal of both sides and $\dfrac{1}{(x-2)^2}>N$.\\
+
+So, for positive $N$, if $0<|x-2|<\delta$ then $f(x)>N$. This means that $\dlim_{x\to 2}\dfrac{1}{(x-2)^2}=\infty$.
+\end{prf}
