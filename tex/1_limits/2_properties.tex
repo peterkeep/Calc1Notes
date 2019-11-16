@@ -1,26 +1,30 @@
 \section{Properties of Limits}
 
-We've estimated limits numerically and graphically, but these can be difficult without more tools at our disposal. Here we'll build up some analytic methods of evaluating limits.
+We've estimated limits numerically and graphically, but these can be difficult without more tools at our disposal.
+Here we'll build up some analytic methods of evaluating limits.
 
 \begin{thm}{Limit Laws and Properties}
-Let $f$ and $g$ be two functions, and assume that $\dlim_{x\to a} f(x)$ and $\dlim_{x\to a} g(x)$ both exist. Then:
-\begin{enumerate}
-\item $\dlim_{x\to a} k = k$ for any constant $k$
-\item $\dlim_{x\to a} x = a$
-\item $\dlim_{x\to a} [f(x)\pm g(x)] = \lim_{x\to a} f(x) \pm \lim_{x\to a} g(x)$
-\item $\displaystyle\lim_{x\to a} cf(x) = c\lim_{x\to a} f(x)$ for any constant multiple (coefficient) $c$. This is really just repeatedly adding a function to itself.
-\item $\dlim_{x\to a} [f(x)\cdot g(x)] = \left[\lim_{x\to a} f(x)\right] \left[\lim_{x\to a} g(x)\right]$
-\item $\dlim_{x\to a} \frac{f(x)}{g(x)} = \frac{\dlim_{x\to a} f(x)}{\dlim_{x\to a} g(x)}$ if $\dlim_{x\to a} g(x)\neq0$
-\item $\dlim_{x\to a} (f(x))^n = \left(\dlim_{x\to a} f(x) \right)^n$ -- exponents are really just repeated multiplication.
-\item $\dlim_{x\to a} (f(x))^{n/m} = \left(\lim_{x\to a} f(x)\right)^{n/m} = \sqrt[m]{\left(\lim_{x\to a}f(x)\right)^n}$ NOTE: if $m$ is even, then we need $f(x)\geq 0$ when $x$ is close to $a$.
-\end{enumerate}
+  Let $f$ and $g$ be two functions, and assume that $\dlim_{x\to a} f(x)$ and $\dlim_{x\to a} g(x)$ both exist.
+  Then:
+  \begin{enumerate}
+    \item $\dlim_{x\to a} k = k$ for any constant $k$
+    \item $\dlim_{x\to a} x = a$
+    \item $\dlim_{x\to a} [f(x)\pm g(x)] = \lim_{x\to a} f(x) \pm \lim_{x\to a} g(x)$
+    \item $\displaystyle\lim_{x\to a} cf(x) = c\lim_{x\to a} f(x)$ for any constant multiple (coefficient) $c$.
+    This is really just repeatedly adding a function to itself.
+    \item $\dlim_{x\to a} [f(x)\cdot g(x)] = \left[\lim_{x\to a} f(x)\right] \left[\lim_{x\to a} g(x)\right]$
+    \item $\dlim_{x\to a} \frac{f(x)}{g(x)} = \frac{\dlim_{x\to a} f(x)}{\dlim_{x\to a} g(x)}$ if $\dlim_{x\to a} g(x)\neq0$
+    \item $\dlim_{x\to a} (f(x))^n = \left(\dlim_{x\to a} f(x) \right)^n$ -- exponents are really just repeated multiplication.
+    \item $\dlim_{x\to a} (f(x))^{n/m} = \left(\lim_{x\to a} f(x)\right)^{n/m} = \sqrt[m]{\left(\lim_{x\to a}f(x)\right)^n}$
+    NOTE: if $m$ is even, then we need $f(x)\geq 0$ when $x$ is close to $a$.
+  \end{enumerate}
 \end{thm}
 
 \begin{note}{Examples}
-Given $\dlim_{x\to 1} f(x) = 4$ and $\dlim_{x\to 1} g(x) = 2$, evaluate the following limits:
-\begin{enumerate}
-\item $\dlim_{x\to 1}\dfrac{f(x)-g(x)}{f(x)}$
-\item $\dlim_{x\to 1} \sqrt{g(x)^2+f(x)^2}$
-\item $\dlim_{x\to 1} 3f(x)+\dfrac{2g(x)}{5}$
-\end{enumerate}
+  Given $\dlim_{x\to 1} f(x) = 4$ and $\dlim_{x\to 1} g(x) = 2$, evaluate the following limits:
+  \begin{enumerate}
+    \item $\dlim_{x\to 1}\dfrac{f(x)-g(x)}{f(x)}$
+    \item $\dlim_{x\to 1} \sqrt{g(x)^2+f(x)^2}$
+    \item $\dlim_{x\to 1} 3f(x)+\dfrac{2g(x)}{5}$
+  \end{enumerate}
 \end{note}

@@ -1,59 +1,66 @@
 \section{Definitions of Limits}
 
 \begin{defn}{Limit of a Function (Early Definition)}
-Suppose the function $f$ is defined for all $x$ near some value $a$ except possibly at $a$ itself. If $f(x)$ is arbitrarily close to some value $L$ whenever $x$ is sufficiently close to $a$ (without actually equaling it), then we write
-\[\lim_{x\to a} f(x) = L\]
+  Suppose the function $f$ is defined for all $x$ near some value $a$ except possibly at $a$ itself.
+  If $f(x)$ is arbitrarily close to some value $L$ whenever $x$ is sufficiently close to $a$ (without actually equaling it), then we write
+  \[\lim_{x\to a} f(x) = L\]
 \end{defn}
 
-\begin{note}{Quick Notes}
-\hspace{1cm}
-\begin{itemize}
-\item Sometimes we'll write $f(x) \to L$ as $x\to a$.
-\item Limits do not have anything to do with function values, since it depends on values \textit{near} $a$.
-\item We can make $x$ ``get close to'' $a$ in two ways (from the left or from the right).
-\item We can investigate limits in three ways: graphically, numerically, and analytically.
-\end{itemize}
+\begin{note}{Quick Notes} \hspace{1cm}
+  \begin{itemize}
+    \item Sometimes we'll write $f(x) \to L$ as $x\to a$.
+    \item Limits do not have anything to do with function values, since it depends on values \textit{near} $a$.
+    \item We can make $x$ ``get close to'' $a$ in two ways (from the left or from the right).
+    \item We can investigate limits in three ways: graphically, numerically, and analytically.
+  \end{itemize}
 \end{note}
 
 \begin{defn}{Graphically}
-As you ``move'' closer to the $x$-value on the graph that you care about, what is happening to the $y$-values? Notice that since we only ``get close'' to $a$, we don't care about the specific function value.
+  As you ``move'' closer to the $x$-value on the graph that you care about, what is happening to the $y$-values?
+  Notice that since we only ``get close'' to $a$, we don't care about the specific function value.
 \end{defn}
 
 \begin{defn}{Numerically}
-Pick $x$-values that are close to $a$ and create a table of values. What is the pattern?
+  Pick $x$-values that are close to $a$ and create a table of values.
+  What is the pattern?
 \end{defn}
 
 \section*{One-Sided Limits}
 
 \begin{defn}{Right-Sided Limit}
-If $f$ is close to $L$ whenever $x$ is close to, but greater than, $a$, then we write:
-\[ \lim_{x\to a^+} f(x)=L\]
+  If $f$ is close to $L$ whenever $x$ is close to, but greater than, $a$, then we write:
+  \[ \lim_{x\to a^+} f(x)=L\]
 \end{defn}
 
 \begin{defn}{Left-Sided Limit}
-If $f$ is close to $L$ whenever $x$ is close to, but less than, $a$, then we write:
-\[ \lim_{x\to a^-} f(x)=L\]
+  If $f$ is close to $L$ whenever $x$ is close to, but less than, $a$, then we write:
+  \[ \lim_{x\to a^-} f(x)=L\]
 \end{defn}
 
 \begin{thm}{Relationship Between One and Two-Sided Limits}
-Assume $f$ is defined for all $x$ near $a$ except possibly at $a$. Then $\dlim_{x\to a} f(x) = L$ if and only if $\dlim_{x\to a^-}f(x) = L = \dlim_{x\to a^+} f(x)$.
+  Assume $f$ is defined for all $x$ near $a$ except possibly at $a$.
+  Then $\dlim_{x\to a} f(x) = L$ if and only if $\dlim_{x\to a^-}f(x) = L = \dlim_{x\to a^+} f(x)$.
 \end{thm}
 
 \section*{Examples}
 
 \begin{itemize}
-\item Graph a small piecewise function with a hole, but the limit existing.
-\item Graph a small piecewise function where the left side limit does not equal the right sided limit.
-\item Numerically find:
-\begin{multicols}{3}
-\begin{itemize}
-  \item $\dlim_{x\to 4} \dfrac{x-4}{\sqrt{x}-2}$
-  \item $\dlim_{x\to 1} \dfrac{\sqrt{x}-1}{x-1}$
-  \item $\dlim_{x\to 2} \dfrac{x^3-8}{4(x-2)}$
-\end{itemize}
-\end{multicols}
-\item Examine $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)$. Numerically, it looks like $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)=-1$, but it actually oscillates between $-1$ and 1.\\
-Note that when $x=\dfrac{1}{n\pi}$, we can see that  $\cos\left(\dfrac{1}{x}\right)=\cos(n\pi)$. For bigger values of $n$, we know that $x=\dfrac{1}{n\pi} \to 0$, and we can also use some basic trig knowledge to analyze what happens when $n$ is odd and when $n$ is even. So as $n$ gets bigger, it bounces back and forth between even and odd values, meaning the value of $\cos(n\pi)$ oscillates between $-1$ and $1$.\\
+  \item Graph a small piecewise function with a hole, but the limit existing.
+  \item Graph a small piecewise function where the left side limit does not equal the right sided limit.
+  \item Numerically find:
+  \begin{multicols}{3}
+    \begin{itemize}
+      \item $\dlim_{x\to 4} \dfrac{x-4}{\sqrt{x}-2}$
+      \item $\dlim_{x\to 1} \dfrac{\sqrt{x}-1}{x-1}$
+      \item $\dlim_{x\to 2} \dfrac{x^3-8}{4(x-2)}$
+    \end{itemize}
+  \end{multicols}
+  \item Examine $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)$.
+  Numerically, it looks like $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)=-1$, but it actually oscillates between $-1$ and 1.
 
-So, show that $\dlim_{x\to0^+}\cos(1/x)$ does not exist to show that the two-sided limit does not exist.
+  Note that when $x=\dfrac{1}{n\pi}$, we can see that  $\cos\left(\dfrac{1}{x}\right)=\cos(n\pi)$.
+  For bigger values of $n$, we know that $x=\dfrac{1}{n\pi} \to 0$, and we can also use some basic trig knowledge to analyze what happens when $n$ is odd and when $n$ is even.
+  So as $n$ gets bigger, it bounces back and forth between even and odd values, meaning the value of $\cos(n\pi)$ oscillates between $-1$ and $1$.
+
+  So, show that $\dlim_{x\to0^+}\cos(1/x)$ does not exist to show that the two-sided limit does not exist.
 \end{itemize}
