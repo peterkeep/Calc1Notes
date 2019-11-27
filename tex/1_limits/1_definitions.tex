@@ -13,8 +13,8 @@ We note that in this definition, we do not actually consider $f(a)$.
 In fact, the function value at $x=a$ doesn't even have to exist.
 We only care about the function values \textit{around} the point at $x=a$.
 
-When we investigate limits, we'll do so in three different ways\footnote{
-These three methods of investigation will remain consistent for most new concepts we discuss in this text.}:
+When we investigate limits, we'll do so in three different ways:\footnote{
+These three methods of investigation will remain consistent for most new concepts we discuss in this text.}
 \begin{enumerate}
   \item Numerically
   \item Graphically
@@ -79,8 +79,8 @@ Why not repeat this process with $x$-values that are close to, but slightly larg
 
 \begin{center}
   \begin{tabular}{cccccc} \toprule
-    $\bm{x}$ & 2.5 & 2.1 & 2.01 & 2.001 & 2.0001\\ \midrule
-    $\bm{f(x)}$ & $-1.5$ & $-1.9$ & $-1.99$ & $-1.999$ & $-1.9999$\\ \bottomrule
+    2.0001 & 2.001 & 2.01 & 2.1 & 2.5 & $\bm{x}$\\ \midrule
+    $-1.9999$ & $-1.999$ & $-1.99$ & $-1.9$ & $-1.5$ & $\bm{f(x)}$ \\ \bottomrule
   \end{tabular}
 \end{center}
 
@@ -113,6 +113,28 @@ What would we have concluded if the one-sided limits did not match?
   If $\dlim_{x\to a^-} f(x) \neq \dlim_{x\to a^+} f(x)$, then we say that $\dlim_{x\to a} f(x)$ does not exist.
 \end{thm}
 
+\subsection*{Another Example}
+
+Let's approximate $\dlim_{x\to -3} x^2+1$ numerically.
+
+\textbf{Left-Sided Limit}
+
+\begin{tabular}{ccccc} \toprule
+  $\bm{x}$ & $-3.5$ & $-3.1$ & $-3.01$ & $-3.001$ \\ \midrule
+  $\bm{f(x)}$ & $13.25$ & $10.61$ & $10.0601$ & $10.006001$\\ \bottomrule
+\end{tabular}
+
+\begin{flushright}
+  \textbf{Right-Sided Limit}
+
+  \begin{tabular}{ccccc} \toprule
+    $-2.999$ & $-2.99$ & $-2.9$ & $-2.5$ & $\bm{x}$ \\ \midrule
+    $9.994001$ & $9.9401$ & $9.41$ & $7.25$ & $\bm{f(x)}$ \\ \bottomrule
+  \end{tabular}
+\end{flushright}
+
+Likely this enough for us to believe that $f(x) \to 10$ when $x\to -3$, or $\dlim_{x\to-3} (x^2+1)=10$.
+
 \section*{Graphical Approximations}
 
 
@@ -137,4 +159,3 @@ What would we have concluded if the one-sided limits did not match?
 
   So, show that $\dlim_{x\to0^+}\cos(1/x)$ does not exist to show that the two-sided limit does not exist.
 \end{itemize}
-
