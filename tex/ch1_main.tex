@@ -1,14 +1,19 @@
 \documentclass[12pt]{book}
 
-\usepackage{amsmath, amsthm, mathtools, dsfont, amssymb}
+\usepackage{amsmath, amsthm, mathtools, dsfont, amssymb, pifont}
 \usepackage[mathscr]{euscript}
-\usepackage[side,marginal]{footmisc}
-\setlength{\marginparwidth}{4cm}
+\usepackage[side,marginal, symbol, perpage]{footmisc}
+\usepackage[left=1.5cm, right=6cm, top=2cm, bottom=2cm, marginparsep=0.75cm, marginparwidth=4cm]{geometry}
+
 \usepackage{coursenotes}
-\usepackage[left=1cm, right=5cm, top=2cm, bottom=2cm]{geometry}
+
 \usepackage{multicol, booktabs, bm}
 
+\setlength{\parskip}{1em}
+
 \renewcommand{\theequation}{\thechapter.\arabic{equation}}
+
+\renewcommand{\thefootnote}{\ding{110}}
 
 \begin{document}
 
