@@ -27,7 +27,7 @@ In this section, we will discuss some numerical and graphical approximations of 
 
 Consider the function $f(x) = x-4$.
 
-Let's say we want to investigate the behavior of the function \textit{around} $x=2$.
+Let's say we want to investigate the behavior of the function\footnote{We're mainly interested in whether or not there's a specific $y$-value that the function is arbitrarily close to.} \textit{around} $x=2$.
 What are the function values doing around that point?
 When $x$ is sufficiently close to $2$, is $f(x)$ arbitrarily close to some single real number?
 
@@ -69,7 +69,7 @@ We can keep this going a bit more:
   \end{tabular}
 \end{center}
 
-So, do we have a good idea of what real number $f(x)$ is getting arbitrarily close to when $x$ is sufficiently close to $2$?
+So, do we have a good idea of what real number $f(x)$ is getting arbitrarily close to when $x$ is sufficiently close to $2$?\footnote{Here's something to think about: why not just start with $x=2$? Go back to the definition of a limit and see.}
 
 It should be obvious in this case: it looks like $f(x) \to -2$ when $x\to 2$.
 We have some good evidence that $\dlim_{x\to 2}x-4 = -2$.
@@ -85,13 +85,13 @@ Why not repeat this process with $x$-values that are close to, but slightly larg
 \end{center}
 
 Well this is good news! It still looks like $f(x) \to -2$ when $x\to 2$.
-We probably have enough evidence to believe that $\dlim_{x\to 2}x-4 = -2$.
+We probably have enough evidence to believe that $\dlim_{x\to 2}(x-4) = -2$.
 
 Maybe more importantly, though, we've touched on a very important concept with limits.
 
 \subsection*{One-Sided Limits}
 
-We've seen already, then, that there are two ``sides'' to a limit, since we can look at values of $x$ that are \textit{close to} $a$ on either side: $x$-values that less than $a$, and $x$-values that are greater than $a$.
+We've seen already, then, that there are two ``sides'' to a limit, since we can look at values of $x$ that are \textit{close to} $a$ on either side: $x$-values that less than $a$, and $x$-values that are greater than $a$.\footnote{We use the terminology ``left'' and ``right'' because of the number line: values less than $a$ on a number line are on the left of $a$, and values greater than $a$ on the number line are on the right of $a$.}
 
 \begin{defn}{Right-Sided Limit}
   If $f$ is arbitrarily close to the single real-number $L$ whenever $x$ is sufficiently close to, but greater than, $a$, then we write:
@@ -105,6 +105,7 @@ We've seen already, then, that there are two ``sides'' to a limit, since we can 
 
 In our example above, whether we looked at $x$-values that were slightly less than $2$ or $x$-values that were slightly greater than $2$, the function values seemed to be getting arbitrarily close to $-2$.
 Since both the right-sided limit and the left-sided limit were the same, we decided that we had more than enough evidence to conclude that the limit of the function as $x$ approached $2$ was $-2$.
+
 What would we have concluded if the one-sided limits did not match?
 
 \begin{thm}{The Existence (and Non-Existence) of a Limit}
@@ -135,27 +136,127 @@ Let's approximate $\dlim_{x\to -3} x^2+1$ numerically.
 
 Likely this enough for us to believe that $f(x) \to 10$ when $x\to -3$, or $\dlim_{x\to-3} (x^2+1)=10$.
 
+We'll see some more examples of numerical approximation near the end of this section, but first let's look at things graphically.
+
 \section*{Graphical Approximations}
 
+With graphical approximations, we're essentially going to repeat the process that we've done for numerical approximations.
+The main difference is in the representation of the function.
 
+When we had the function represented in some algebraic expression ($f(x) = ...$), we could approximate the limit $\dlim_{x\to a} f(x)$ by evaluating our function at $x$-values.
+We picked $x$-values that were ``sufficiently close'' to $a$ on either side, and tried to figure out what the corresponding $y$-values were ``arbitrarily close'' to.
+
+In this context, though, we'll have functions represented graphically.
+We still want to evaluate our functions at a bunch of $x$-values and find the corresponding $y$-values.
+But now, instead of plugging those $x$-values into an algebraic rule or expression, we'll be looking at a picture of a graph to find those $y$-values.
+
+Consider this function $f(x)$, graphed below.
+
+% Graph of function with a hole, but limit exists
+
+If we look at the limit $\dlim_{x\to a} f(x)$, we can try to evaluate our function near $a$.
+Instead of actually evaluating it, though, we'll have to look at the $y$-values from the graph.
+
+\textbf{Left-Sided Limit}
+
+% Left-sided limit evaluations
+
+Graphically, then, it looks like as $x\to a^-$, $f(x) \to L$.
+
+\textbf{Right-Sided Limit}
+
+% Right-sided limit evaluations
+
+And here, based on the graph, it looks like as $x\to a^+$, $f(x)\to L$.
+
+So we have graphical evidence that $\dlim_{x\to a^-} f(x) = \dlim_{x\to a^+} f(x) = L$.
+
+Graphically, we can quickly approximate limits relatively easily.
+With this visual medium, we can get a ton of information quickly just by glancing at our graph.
+We can get approximations on both of the one-sided limits.
+
+% Graph with vertical bar highlighting behavior.
+
+% Graph with thinner vertical bar.
+
+Let's use this method to approximate another limit.
+
+% Second graph.
+
+% Second graph with bar.
+
+Visually, it looks like $\dlim_{x\to b^-} g(x) = L_1$, but $\dlim_{x\to b^+} g(x) = L_2$. Thus, since we have evidence that $\dlim_{x\to b^-} g(x) \neq \dlim_{x\to b^+} g(x)$, we should probably conclude that the limit $\dlim_{x\to b} g(x)$ does not exist.
+
+\section*{A Warning}
+
+Hopefully we can see how these numerical and graphical approximations are helpful in building some intuition about whether a limit exists or not, and what it may be.
+
+Remember though, these are just approximations!
+\begin{defn}{Numerically}
+  We can definitely see in the example above that even when we were pretty sure that the limit existed, it may be hard to tell exactly what it is.
+  It could also be possible that the limit doesn't exist, because the left-sided limit and the right-sided limit are very similar but not actually the same.\\
+
+  For instance, what if $\dlim_{x\to a^-} f(x) = 1.98325678$ and $\dlim_{x\to a^+} f(x) = 1.98325635$.
+  It would be very hard to notice this difference numerically.
+  We might (wrongly) conclude that the left-sided limit and right-sided limits are both $1.983256$\footnote{Notice how quickly we gave up on the numerical approximations for the examples above before we just concluded that the one-sided limits probably matched up.}, and then (mistakenly) say that $\dlim_{x\to a} f(x)=1.983256$ instead of saying it doesn't exist.
+\end{defn}
+
+\begin{defn}{Graphically}
+  Imagine a similar situation as above, but we only get to look at the picture of the graph.
+  If $\dlim_{x\to a^-} f(x) = 1.98325678$ and $\dlim_{x\to a^+} f(x) = 1.98325635$, we would likely not notice.
+  On any normal scale, the difference between the $y$-value $1.98325678$ and the $y$-value $1.98325635$ would be imperceptible.\\
+
+  Also, even if we're pretty sure that a limit might exist, if that limit doesn't fall on a ``nice'' value (like an integer, or some other value that matches up with the $y$-axis scale), then we may not be able to tell what it is.\footnote{Here's an example:
+  % graph
+  }
+\end{defn}
+
+We must approach these approximations with a grain of salt -- these approximations aren't perfect.
+They are, however, very helpful.
+We can gain valuable insight and build intuition about limits through these approximations.
+Putting both of these approximation methods together for the same problem gives us a well-rounded view of the limit we're investigating, and a good amount of evidence for either existence or non-existence.
+
+We'll practice this in these next few examples.
 
 \section*{Examples}
 
-\begin{itemize}
-  \item Graph a small piecewise function with a hole, but the limit existing.
-  \item Graph a small piecewise function where the left side limit does not equal the right sided limit.
-  \item Numerically find:
-    \begin{itemize}
-      \item $\dlim_{x\to 4} \dfrac{x-4}{\sqrt{x}-2}$
-      \item $\dlim_{x\to 1} \dfrac{\sqrt{x}-1}{x-1}$
-      \item $\dlim_{x\to 2} \dfrac{x^3-8}{4(x-2)}$
-    \end{itemize}
-  \item Examine $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)$.
-  Numerically, it looks like $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)=-1$, but it actually oscillates between $-1$ and 1.
 
-  Note that when $x=\dfrac{1}{n\pi}$, we can see that  $\cos\left(\dfrac{1}{x}\right)=\cos(n\pi)$.
-  For bigger values of $n$, we know that $x=\dfrac{1}{n\pi} \to 0$, and we can also use some basic trig knowledge to analyze what happens when $n$ is odd and when $n$ is even.
-  So as $n$ gets bigger, it bounces back and forth between even and odd values, meaning the value of $\cos(n\pi)$ oscillates between $-1$ and $1$.
+\begin{enumerate}
+  \item Let's approximate $\dlim_{x\to 2} \dfrac{x-4}{\sqrt{x}-2}$.
 
-  So, show that $\dlim_{x\to0^+}\cos(1/x)$ does not exist to show that the two-sided limit does not exist.
-\end{itemize}
+  \textbf{Left-Sided Limit}
+
+  \begin{tabular}{ccccc} \toprule
+    $\bm{x}$ & $1.5$ & $1.9$ & $1.99$ & $1.999$ \\ \midrule
+    $\bm{f(x)}$ & $3.2247449$ & $3.3784049$ & $3.4106736$ & $3.4138600$\\ \bottomrule
+  \end{tabular}
+
+  \begin{flushright}
+    \textbf{Right-Sided Limit}
+
+    \begin{tabular}{ccccc} \toprule
+      $2.001$ & $2.01$ & $2.1$ & $2.5$ & $\bm{x}$ \\ \midrule
+      $3.4145671$ & $3.4177447$ & $3.4491377$ & $3.5811388$ & $\bm{f(x)}$ \\ \bottomrule
+    \end{tabular}
+  \end{flushright}
+
+  Hopefully we're seeing the problem with approximations: it is not clear what the exact value of the $y$-value that we're getting close to is.
+  It looks like it's approximately 3.41-ish, but that's not great.
+  We'd like to get an exact value here!\footnote{We'll come back to this problem a little later when we're able to evaluate limits analytically.}
+
+  You also might notice that this is the first example that isn't ``obvious:'' in all of the other examples, we could have just evaluated the function at the $x$-value we were considering.
+  Here, though, if $f(x) = \dfrac{x-4}{\sqrt{x}-2}$, we can see that $f(2)$ is not defined.
+  Strangely, though, it does look like the limit should exist -- the left-sided limit and the right-side limit look to be the same, although we can't easily tell what they are exactly.
+
+  This example not only points out the problems with approximations (since again, we can't easily tell what the limit is exactly), but also reminds us that the limit of a function and the function value itself are not always related.
+  \item Let's approximate $\dlim_{x\to 1} \dfrac{|x-1|}{x-1}$.
+\end{enumerate}
+
+Examine $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)$.
+Numerically, it looks like $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)=-1$, but it actually oscillates between $-1$ and 1.
+
+Note that when $x=\dfrac{1}{n\pi}$, we can see that  $\cos\left(\dfrac{1}{x}\right)=\cos(n\pi)$.
+For bigger values of $n$, we know that $x=\dfrac{1}{n\pi} \to 0$, and we can also use some basic trig knowledge to analyze what happens when $n$ is odd and when $n$ is even.
+So as $n$ gets bigger, it bounces back and forth between even and odd values, meaning the value of $\cos(n\pi)$ oscillates between $-1$ and $1$.
+
+So, show that $\dlim_{x\to0^+}\cos(1/x)$ does not exist to show that the two-sided limit
