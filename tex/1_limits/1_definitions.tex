@@ -304,15 +304,62 @@ We'll practice this in these next few examples.
   \end{flushright}
 
   Hopefully we're seeing the problem with approximations: it is not clear what the exact value of the $y$-value that we're getting close to is.
-  It looks like it's approximately 3.41-ish, but that's not great.
-  We'd like to get an exact value here!\footnote{We'll come back to this problem a little later when we're able to evaluate limits analytically.}
+  It looks like it's approximately 3.41(ish), but that's not great.
+  We'd like to get an exact value here!
 
   You also might notice that this is the first example that isn't ``obvious:'' in all of the other examples, we could have just evaluated the function at the $x$-value we were considering.
   Here, though, if $f(x) = \dfrac{x-4}{\sqrt{x}-2}$, we can see that $f(2)$ is not defined.
   Strangely, though, it does look like the limit should exist -- the left-sided limit and the right-side limit look to be the same, although we can't easily tell what they are exactly.
 
-  This example not only points out the problems with approximations (since again, we can't easily tell what the limit is exactly), but also reminds us that the limit of a function and the function value itself are not always related.
+  Let's look at the graph.
+
+  \begin{figure}[h!tb]
+    \includegraphics[scale=0.75]{./1_limits/images/1-1_graph3.png}
+    \centering
+  \end{figure}
+
+  Again, we have some pretty convincing evidence that the limit exists, but it is difficult to see what it actually is.
+  Since the $y$-values aren't approaching one of the values used for the scale (i.e. one of the grid lines), we can only guess at what the $y$-value that the graph is approaching actually is.
+
   \item Let's approximate $\dlim_{x\to 1} \dfrac{|x-1|}{x-1}$.
+
+  We'll start things off with some numerical estimates:
+
+  \textbf{Left-Sided Limit}
+
+  \begin{tabular}{ccccc} \toprule
+    $\bm{x}$ & $0.5$ & $0.9$ & $0.99$ & $0.999$ \\ \midrule
+    $\bm{f(x)}$ & $-1$ & $-1$ & $-1$ & $-1$\\ \bottomrule
+  \end{tabular}
+
+  \begin{flushright}
+    \textbf{Right-Sided Limit}
+
+    \begin{tabular}{ccccc} \toprule
+      $1.001$ & $1.01$ & $1.1$ & $1.5$ & $\bm{x}$ \\ \midrule
+      $1$ & $1$ & $1$ & $1$ & $\bm{f(x)}$ \\ \bottomrule
+    \end{tabular}
+  \end{flushright}
+
+  Very strange!
+  In fact, this doesn't really feel like \textit{approximation} at all, since there doesn't seem to be much guess-work involved in figuring out which $y$-value is being approached.
+
+  Let's confirm our suspicions graphically.
+
+  \begin{figure}[h!tb]
+    \includegraphics[scale=0.75]{./1_limits/images/1-1_graph4.png}
+    \centering
+  \end{figure}
+
+  Sure enough, it's easy to see what's going on with this limit:
+
+  $$\dlim_{x\to1^-} \dfrac{|x-1|}{x-1} = -1 \hspace{2cm}\dlim_{x\to1^+} \dfrac{|x-1|}{x-1} = 1$$
+
+  So we likely believe that $\dlim_{x\to1} \dfrac{|x-1|}{x-1}$ does not exist, since the left-sided limit and the right-sided limit do not agree.\footnote{Can you explain what is happening here in general?
+  Can we evaluate these one-sided limits without appealing to a graph or some test points?
+  What, exactly, is that absolute value doing, and why does the behavior change on one side of $x=1$ compared to the other?
+
+  These are good questions to think about and answer to yourselves.}
 \end{enumerate}
 
 Examine $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)$.
