@@ -162,45 +162,93 @@ Instead of actually evaluating it, though, we'll have to look at the $y$-values 
 
 \textbf{Left-Sided Limit}
 
+When we approximate the left-sided limit, we can pick some points on the graph that are ``on the left'' of $x=3$.
+You can see these plotted in red.
+
 \begin{figure}[h!tb]
   \includegraphics[scale=0.75]{./1_limits/images/1-1_graph1L.png}
   \centering
 \end{figure}
 
+Try to follow the movement on the red points as the $x$-values increase up to $3$.
+Remember, when we're approximating a limit, we're trying to find what $y$-value we're getting aribtrarily close to.
+As we follow the movement of the red points, we can see that the $y$-values drop.
+What are they approaching?
+
 Graphically, then, it looks like as $x\to 3^-$, $f(x) \to -2$.
+We can say we've got evidence that $\dlim_{x\to 3^-} fx) = -2$.
 
 \textbf{Right-Sided Limit}
+
+Let's do the same thing on the right.
+We'll pick some points, plotted in blue this time\footnote{In your own practice, find a way of visualizing these points -- draw arrows, plot points, draw movement, etc. Find something that works for you!}, and try to follow the movement of the $y$-values.
 
 \begin{figure}[h!tb]
   \includegraphics[scale=0.75]{./1_limits/images/1-1_graph1R.png}
   \centering
 \end{figure}
 
-And here, based on the graph, it looks like as $x\to 3^+$, $f(x)\to -2$.
+So here, based on the graph, it looks like as $x\to 3^+$, $f(x)\to -2$.
+Likely, then, we believe that $\dlim_{x\to 3^+} f(x) = -2$.
 
 So we have graphical evidence that $\dlim_{x\to 3^-} f(x) = \dlim_{x\to 3^+} f(x) = -2$.
 
-Graphically, we can quickly approximate limits relatively easily.
+Graphical approximations are typically nice\footnote{Don't get too nervous! It normally takes students a little bit to be able to read a graph quickly and easily. Go slowly and build that intuition!} to work with and fast to do.
 With this visual medium, we can get a ton of information quickly just by glancing at our graph.
 We can get approximations on both of the one-sided limits.
+
+This time, then, instead of taking the time to plot all of those points on each side individually, we'll use the graph to see the behavior of the function around $x=3$.
+Focus on an interval of $x$-values around $3$.
 
 \begin{figure}[h!tb]
   \includegraphics[scale=0.75]{./1_limits/images/1-1_graph1bar1.png}
   \centering
 \end{figure}
 
+Look at the graph behavior in this interval.
+What is the function doing on either side of $x=3$?
+What are the $y$-values close to?
+
+If it's hard to tell, let's consider a smaller interval of $x$-values.
+
 \begin{figure}[h!tb]
   \includegraphics[scale=0.75]{./1_limits/images/1-1_graph1bar2.png}
   \centering
 \end{figure}
 
-Let's use this method to approximate another limit.
+Hopefully we can see that around $x=3$, the $y$-values on the graph are all close to $-2$.
+We have the same behavior on both sides.
+In this ``interval'' visualization, we can easily see that the graph seems to be ``going'' to the same $y$-value on both sides of $x=3$.
 
-% Second graph.
+Let's use this method to approximate another limit. Consider the function $g(x)$, graphed below.
+We'll try to approximate the limit $\dlim_{x\to-1} g(x)$.
 
-% Second graph with bar.
+\begin{figure}[h!tb]
+  \includegraphics[scale=0.75]{./1_limits/images/1-1_graph2.png}
+  \centering
+\end{figure}
 
-Visually, it looks like $\dlim_{x\to b^-} g(x) = L_1$, but $\dlim_{x\to b^+} g(x) = L_2$. Thus, since we have evidence that $\dlim_{x\to b^-} g(x) \neq \dlim_{x\to b^+} g(x)$, we should probably conclude that the limit $\dlim_{x\to b} g(x)$ does not exist.
+Let's again focus on an interval of $x$-values around $-1$, and try to talk about the behavior of the function on either side of $x=-1$.
+
+\begin{figure}[h!tb]
+  \includegraphics[scale=0.75]{./1_limits/images/1-1_graph2bar1.png}
+  \centering
+\end{figure}
+
+Notice that there are three things happening:
+\begin{enumerate}
+  \item On the left of $x=-1$, the $y$-values on the graph seem like they're close to $y=2$.
+  \item On the right of $x=-1$, the $y$-values on the graph seem like they're close to $y=-1$.
+  \item At $x=-1$ specifically, we have $g(-1)=3$.
+\end{enumerate}
+
+Remember that with limits, we only care about the function \textit{around} (but not at) the specific $x$-value.
+So in this case, the fact that $g(-1)=3$ is not relevant at all.
+All we're concerned with is the limit of the function as $x$ \textit{approaches} $-1$.
+
+So the other two things we noticed really give us our limit statements.
+
+Visually, it looks like $\dlim_{x\to -1^-} g(x) = 2$, but $\dlim_{x\to -1^+} g(x) = -1$. Thus, since we have evidence that $\dlim_{x\to -1^-} g(x) \neq \dlim_{x\to -1^+} g(x)$, we should probably conclude that the limit $\dlim_{x\to -1} g(x)$ does not exist.
 
 \section*{A Warning}
 
