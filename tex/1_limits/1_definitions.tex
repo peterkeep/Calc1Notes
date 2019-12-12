@@ -269,9 +269,7 @@ Remember though, these are just approximations!
   If $\dlim_{x\to a^-} f(x) = 1.98325678$ and $\dlim_{x\to a^+} f(x) = 1.98325635$, we would likely not notice.
   On any normal scale, the difference between the $y$-value $1.98325678$ and the $y$-value $1.98325635$ would be imperceptible.\\
 
-  Also, even if we're pretty sure that a limit might exist, if that limit doesn't fall on a ``nice'' value (like an integer, or some other value that matches up with the $y$-axis scale), then we may not be able to tell what it is.\footnote{Here's an example:
-  % graph
-  }
+  Also, even if we're pretty sure that a limit might exist, if that limit doesn't fall on a ``nice'' value (like an integer, or some other value that matches up with the $y$-axis scale), then we may not be able to tell what it is.
 \end{defn}
 
 We must approach these approximations with a grain of salt -- these approximations aren't perfect.
@@ -362,11 +360,35 @@ We'll practice this in these next few examples.
   These are good questions to think about and answer to yourselves.}
 \end{enumerate}
 
-Examine $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)$.
-Numerically, it looks like $\dlim_{x\to 0} \cos\left(\dfrac{1}{x}\right)=-1$, but it actually oscillates between $-1$ and 1.
+\section*{So How Can We Do Better Than Approximations?}
 
-Note that when $x=\dfrac{1}{n\pi}$, we can see that  $\cos\left(\dfrac{1}{x}\right)=\cos(n\pi)$.
-For bigger values of $n$, we know that $x=\dfrac{1}{n\pi} \to 0$, and we can also use some basic trig knowledge to analyze what happens when $n$ is odd and when $n$ is even.
-So as $n$ gets bigger, it bounces back and forth between even and odd values, meaning the value of $\cos(n\pi)$ oscillates between $-1$ and $1$.
+We've seen the benefits and drawbacks of approximations of limits.
+We should be thinking about how we might push past this idea of approximation and into \textit{evaluation}.
+How can we tell exactly what a limit is without having to rely on test points or graphs?
+For the examples when we \textit{do} have test points and graphs, but we still don't know exactly what the limit is, what do we do then?
 
-So, show that $\dlim_{x\to0^+}\cos(1/x)$ does not exist to show that the two-sided limit
+We can use an example to push towards limit evaluation, and also to notice another kind of non-existence.
+
+\subsection*{Last Example}
+
+Examine $\dlim_{x\to 0} \sin(1/x)$ numerically and graphically.
+
+I won't write out the number approximations, because you'll notice that they're wildly different depending on what $x$-values you pick that are close to $0$ (on either side).
+
+Strange.
+
+Let's investigate the graph of $f(x) = \sin(1/x)$ around $x=0$.
+
+\begin{figure}[h!tb]
+  \includegraphics[scale=1]{./1_limits/images/1-1_graph5.png}
+  \centering
+\end{figure}
+
+This is no help at all. We could try to zoom in further, but that dark, dense, mess of a function around $x=0$ won't clear itself up. Let's instead try to get an idea of how to analyze the limit without approximations.
+
+First, let's nail down one of the things we're seeing graphically: the range of $f(x) = \sin(1/x)$ is $[-1,1]$.
+This is because the range of $\sin\theta$ is $[-1,1]$, and in this case we're just saying that $\theta = \frac{1}{x}$.
+
+Second, notice that the domain of $f(x) = \sin(1/x)$ is $(-\infty,0)\cup(0,\infty)$. We cannot evaluate $f(0)$, since we'd be trying to find $\sin(1/0)$ and $1/0$ is not a real number.
+This isn't a huge deal for us, though, because we can remember: we're trying to find $\dlim_{x\to0} \sin(1/x)$, which does not rely on the function value at $x=0$.
+We only care about the function values \textit{around} $x=0$.
