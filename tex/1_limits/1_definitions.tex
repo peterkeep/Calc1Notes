@@ -384,7 +384,8 @@ Let's investigate the graph of $f(x) = \sin(1/x)$ around $x=0$.
   \centering
 \end{figure}
 
-This is no help at all. We could try to zoom in further, but that dark, dense, mess of a function around $x=0$ won't clear itself up. Let's instead try to get an idea of how to analyze the limit without approximations.
+This is no help at all. We could try to zoom in further, but that dark, dense, mess of a function around $x=0$ won't clear itself up.
+Let's instead try to get an idea of how to analyze the limit without approximations.
 
 First, let's nail down one of the things we're seeing graphically: the range of $f(x) = \sin(1/x)$ is $[-1,1]$.
 This is because the range of $\sin\theta$ is $[-1,1]$, and in this case we're just saying that $\theta = \frac{1}{x}$.
@@ -392,3 +393,50 @@ This is because the range of $\sin\theta$ is $[-1,1]$, and in this case we're ju
 Second, notice that the domain of $f(x) = \sin(1/x)$ is $(-\infty,0)\cup(0,\infty)$. We cannot evaluate $f(0)$, since we'd be trying to find $\sin(1/0)$ and $1/0$ is not a real number.
 This isn't a huge deal for us, though, because we can remember: we're trying to find $\dlim_{x\to0} \sin(1/x)$, which does not rely on the function value at $x=0$.
 We only care about the function values \textit{around} $x=0$.
+
+Let's figure out what happens around $x=0$.
+For no specific reason, let's just look at the right-sided limit first: $\dlim_{x\to 0^+} \sin(1/x)$.
+
+Above, we looked at a kind of variable substitution: if $\theta = 1/x$, then $\sin(1/x) = \sin \theta$.
+So if $x\to 0^+$, What's happening to $\theta$?
+Notice that as we divide 1 by smaller and smaller values, the value of $1/x$ gets larger and larger.
+Since $x>0$ (since it's a right-sided limit), $\theta = 1/x$ is getting larger in the positive direction.
+
+So really, then, the question can be re-phrased: instead of trying to figure out what $\sin(1/x)$ approaches as $x$ approaches $0$ on the right, we can think about trying to understand the behavior of $\sin \theta$ as $\theta$ gets larger and larger.
+
+We can understand this behavior in two ways:
+\begin{enumerate}
+  \item Think of the graph of $y=\sin\theta$:
+  \begin{figure}[h!tb]
+    \includegraphics[scale=1]{./1_limits/images/1-1_graph6.png}
+    \centering
+  \end{figure}
+  We can see that as $\theta$ gets larger, $\sin\theta$ just keeps oscillating between $-1$ and $1$ over and over.
+  \item Think about the unit circle:
+  \begin{figure}[h!tb]
+    \includegraphics[scale=1]{./1_limits/images/unitcirc.png}
+    \centering
+  \end{figure}
+  We can see that as $\theta$ increases, our point will move around the unit circle in a counterclockwise rotation.
+  Since $\sin\theta$ defines the vertical component of the point (the $y$-value on the unit circle), we can see that the highest $y$-value our point will have is $1$.
+  Similarly, the lowest $y$-value our point can have is $-1$.
+  So as $\theta$ increases, we again see that $\sin\theta$ keeps oscillaring back and forth between $-1$ and $1$.
+\end{enumerate}
+
+If we think about the definition of a limit, that means that we \textit{don't} have a single real number $L$ that our function, $\sin\theta$ gets arbitrarily close to as $\theta$ gets larger and larger.
+If there's not that single real number, then our limit does not exist.
+
+So all of this to say: as $x\to 0^+$, $\sin(1/x)$ oscillates between $-1$ and $1$, and does not approach a single real number.
+So $\dlim_{x\to 0^+} \sin(1/x)$ doesn't exist.
+
+So what about $\dlim_{x\to 0^-} \sin(1/x)$?
+You should be able to see almost the exact same thing happening, except that we're looking at the angle $\theta$ getting very negative.
+Still, though, we'll find that the oscillation of the $\sin\theta$ function is going give us this non-existent limit.
+
+So then $\dlim_{x\to0} \sin(1/x)$ doesn't exist.
+Not because the left and right-sided limits don't match up.
+Instead, the limit doesn't exist because the one-sided limits don't exist, and they don't exist because there is not a single real number that $\sin(1/x)$ approaches.
+
+This kind of analysis is less about number crunching and more about thinking about the function behavior.
+We'll begin doing that more and more, now.
+In the next sections, we'll build up some properties of limits and functions that will allow us to think about and evaluate limits relatively quickly.
