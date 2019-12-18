@@ -5,9 +5,9 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{classnotes}
   [2011/01/11 v0.01 LaTeX package formatting class notes]
-  
+
 % Framed package
-\usepackage{mdframed}
+\usepackage[framemethod=TikZ]{mdframed}
 \usepackage{xcolor}
 
 \usepackage{ifthen}
@@ -18,15 +18,40 @@
 
 
 % Definitions
-\newenvironment{defn}[1]{\begin{description}
+\newenvironment{defn}[1]{\begin{mdframed}[backgroundcolor=gray!30]
+\begin{description}
+\item [Definition -- #1:]
+\begin{description}
+\item[]}
+{\end{description}
+\end{description}\end{mdframed}}
+
+% Description
+\newenvironment{describe}[1]{
+\begin{description}
 \item [#1:]
 \begin{description}
 \item[]}
 {\end{description}
 \end{description}}
 
+% Recaps
+\newenvironment{recap}
+{\begin{mdframed}[backgroundcolor=gray!10, roundcorner=5pt]
+\vspace{-0.5cm}
+\subsection*{Reminders}}
+{\vspace{0.25cm}\end{mdframed}}
+
 % Theorems
 \newenvironment{thm}[1]{\begin{mdframed}[backgroundcolor=gray!30] \begin{description}
+\item [Theorem -- #1:]
+\begin{description}
+\item[]}
+{\end{description}
+\end{description}\end{mdframed}}
+
+% Important
+\newenvironment{imp}[1]{\begin{mdframed}[backgroundcolor=gray!30] \begin{description}
 \item [#1:]
 \begin{description}
 \item[]}

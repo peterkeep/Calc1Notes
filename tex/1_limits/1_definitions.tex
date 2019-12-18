@@ -2,12 +2,12 @@
 
 We begin with the definition of the limit of a function.
 
-\begin{thm}{Limit of a Function}
+\begin{defn}{Limit of a Function}
   Consider the function $f$, defined at all $x$ around some value $a$ except possibly at $a$ itself.
   If $f(x)$ is arbitrarily close to the single real number $L$ whenever $x$ is sufficiently close to, but not equal to, $a$, then we say that the limit of $f$ is $L$ as $x$ approaches $a$, and we write
   \[\lim_{x\to a} f(x) = L\]
   Alternatively, we can write that $f(x)\to L$ when $x\to a$.
-\end{thm}
+\end{defn}
 
 We note that in this definition, we do not actually consider $f(a)$.
 In fact, the function value at $x=a$ doesn't even have to exist.
@@ -255,22 +255,22 @@ Visually, it looks like $\dlim_{x\to -1^-} g(x) = 2$, but $\dlim_{x\to -1^+} g(x
 Hopefully we can see how these numerical and graphical approximations are helpful in building some intuition about whether a limit exists or not, and what it may be.
 
 Remember though, these are just approximations!
-\begin{defn}{Numerically}
+\begin{describe}{Numerically}
   We can definitely see in the example above that even when we were pretty sure that the limit existed, it may be hard to tell exactly what it is.
   It could also be possible that the limit doesn't exist, because the left-sided limit and the right-sided limit are very similar but not actually the same.\\
 
   For instance, what if $\dlim_{x\to a^-} f(x) = 1.98325678$ and $\dlim_{x\to a^+} f(x) = 1.98325635$.
   It would be very hard to notice this difference numerically.
   We might (wrongly) conclude that the left-sided limit and right-sided limits are both $1.983256$\footnote{Notice how quickly we gave up on the numerical approximations for the examples above before we just concluded that the one-sided limits probably matched up.}, and then (mistakenly) say that $\dlim_{x\to a} f(x)=1.983256$ instead of saying it doesn't exist.
-\end{defn}
+\end{describe}
 
-\begin{defn}{Graphically}
+\begin{describe}{Graphically}
   Imagine a similar situation as above, but we only get to look at the picture of the graph.
   If $\dlim_{x\to a^-} f(x) = 1.98325678$ and $\dlim_{x\to a^+} f(x) = 1.98325635$, we would likely not notice.
   On any normal scale, the difference between the $y$-value $1.98325678$ and the $y$-value $1.98325635$ would be imperceptible.\\
 
   Also, even if we're pretty sure that a limit might exist, if that limit doesn't fall on a ``nice'' value (like an integer, or some other value that matches up with the $y$-axis scale), then we may not be able to tell what it is.
-\end{defn}
+\end{describe}
 
 We must approach these approximations with a grain of salt -- these approximations aren't perfect.
 They are, however, very helpful.
