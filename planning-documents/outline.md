@@ -19,9 +19,12 @@
 ### Properties of Limits
 
 - use limits of constant and identity functions to build up class of polynomial and rational functions
+- square root limit exists at 0
+- indeterminate forms, algebraic manipulation, don't care about domain of function
 
 ### Computing Limits
 
+- use ideas of closeness to get a sense of what's happening with absolute values, square roots, etc.
 - Squeeze Theorem: sin(x)/x and (cos(x)-1)/x
 
 ### Infinite Limits

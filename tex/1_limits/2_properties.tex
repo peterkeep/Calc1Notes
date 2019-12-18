@@ -1,24 +1,99 @@
 \section{Properties of Limits}
 
+\begin{recap}
+  \begin{itemize}
+    \item If $f(x)$ is arbitrarily close to $L$ whenever $x$ is sufficiently close to, \textit{but not equal to} $a$, then we say $\dlim_{x\to a}f(x) = L$.
+    \item If the left-side limit and the right-side limit do not match up, we say that the (two-sided) limit does not exist.
+    \item We can estimate limits numerically by evaluating $f$ at $x$-values close to (and on either side of) $a$.
+    We look to see if the $y$-values are arbitrarily close to some real number.
+    \item We can estimate limits graphically by visualizing the function values around $a$, and again trying to see if the $y$-values are arbitrarily close to some value.
+  \end{itemize}
+\end{recap}
+
 We've estimated limits numerically and graphically, but these can be difficult without more tools at our disposal.
 Here we'll build up some analytic methods of evaluating limits.
+We'll start by analyzing two specific functions, and build two limit laws for those specific functions.
 
-\begin{thm}{Limit Laws and Properties}
+Then, we'll build some general limit laws for any function.
+
+To start, then, two easy limits.
+
+\subsection*{Two Easy Limits}
+\begin{enumerate}
+  \item Let $f(x) = k$, where $k$ is some real number.
+  Then $\dlim_{x\to a} k = k$.
+
+  \begin{describe}{\textit{Explanation}}
+    This function is a constant function, meaning that every output of the function is $k$, no matter what the input is.\\
+
+    That means that for every $x$, $f(x) = k$. So then for all $x$ that are close to $a$, $f(x) = k$.\\
+
+    So $f(x)$ is arbitrarily close to $k$ (in fact, it's equal to $k$) for all $x$ sufficiently close to, but not equal to, $a$.\\
+
+    Visually, we can see some graphical evidence of this.
+    \begin{figure}[h!tb]
+      \includegraphics[scale=0.5]{./1_limits/images/1-2_graph1.png}
+      \centering
+    \end{figure}
+  \end{describe}
+  \item Let $f(x) = x$. Then $\dlim_{x\to a} x = a$.
+
+  \begin{describe}{\textit{Explanation}}
+    This function is the identity function, meaning that every output of the function is the same as the input.\\
+
+    Then, when $x$ is close to $a$, $f(x) = x$ is also close to $a$.
+    In fact, $f(x)$ is as close to $a$ as $x$ is, since they're the same thing.
+    Thus, $f(x)$ is arbitrarily close to $a$ whenever $x$ is sufficiently close to $a$.\\
+
+    Visually, we can see some graphical evidence of this.
+    \begin{figure}[h!tb]
+      \includegraphics[scale=0.5]{./1_limits/images/1-2_graph2.png}
+      \centering
+    \end{figure}
+  \end{describe}
+\end{enumerate}
+
+\begin{note}{Examples}
+  There really isn't much to do here, since once you've seen a couple of these examples, you've essentially seen them all.
+
+  \begin{enumerate}
+    \item $\dlim_{x\to 4} -3 = -3$
+    \item $\dlim_{x\to -8} 7 = 7$
+    \item $\dlim_{x\to -1} x = -1$
+    \item $\dlim_{x\to 15} x = 15$
+  \end{enumerate}
+\end{note}
+
+\subsection*{Limit Laws In General}
+
+We will now think about functions in general, and build some laws/properties to apply to limits, no matter the context.
+These properties will all be based around some basic operations on functions: addition, multiplication, division, and some exponents.
+
+\begin{imp}{Limit Laws and Properties}
   Let $f$ and $g$ be two functions, and assume that $\dlim_{x\to a} f(x)$ and $\dlim_{x\to a} g(x)$ both exist.
   Then:
   \begin{enumerate}
-    \item $\dlim_{x\to a} k = k$ for any constant $k$
-    \item $\dlim_{x\to a} x = a$
     \item $\dlim_{x\to a} [f(x)\pm g(x)] = \lim_{x\to a} f(x) \pm \lim_{x\to a} g(x)$
     \item $\displaystyle\lim_{x\to a} cf(x) = c\lim_{x\to a} f(x)$ for any constant multiple (coefficient) $c$.
-    This is really just repeatedly adding a function to itself.
     \item $\dlim_{x\to a} [f(x)\cdot g(x)] = \left[\lim_{x\to a} f(x)\right] \left[\lim_{x\to a} g(x)\right]$
     \item $\dlim_{x\to a} \frac{f(x)}{g(x)} = \frac{\dlim_{x\to a} f(x)}{\dlim_{x\to a} g(x)}$ if $\dlim_{x\to a} g(x)\neq0$
-    \item $\dlim_{x\to a} (f(x))^n = \left(\dlim_{x\to a} f(x) \right)^n$ -- exponents are really just repeated multiplication.
-    \item $\dlim_{x\to a} (f(x))^{n/m} = \left(\lim_{x\to a} f(x)\right)^{n/m} = \sqrt[m]{\left(\lim_{x\to a}f(x)\right)^n}$
-    NOTE: if $m$ is even, then we need $f(x)\geq 0$ when $x$ is close to $a$.
+    \item $\dlim_{x\to a} (f(x))^n = \left(\dlim_{x\to a} f(x) \right)^n$ for positive integers $n$.
   \end{enumerate}
-\end{thm}
+\end{imp}
+
+\begin{note}{Explanations}\hspace{1cm}
+  \begin{enumerate}
+    \item We should be able to rationalize this property, since $(f\pm g)(x)= f(x)\pm g(x)$.
+    Since the limit is concerned with what the $y$-value is arbitrarily close to, we can see that the operation is ``preserved" across the limit.
+    The following saying is helpful here: ``the limit of a sum (or difference) is the sum (or difference) of the limits.''
+    \item Notice that a coefficient really represents repeated addition: $c\cdot f(x) = \underbrace{f(x) + f(x) + ...+ f(x)}_{c \text{ times}}$.
+    \item ``The limit of a product is the product of the limits.''
+    Limits preserve multiplication in the same way that they preserve sums.
+    \item Dividing is really just multiplication by a reciprocal.
+    The only thing we need to worry about is dividing by 0.\footnote{We'll investigate this more!}
+    \item An exponent really represents repeated multiplication: $(f(x))^n = \underbrace{f(x) \cdot f(x) \cdot ... \cdot f(x)}_{n \text{ times}}$.
+  \end{enumerate}
+\end{note}
 
 \begin{note}{Examples}
   Given $\dlim_{x\to 1} f(x) = 4$ and $\dlim_{x\to 1} g(x) = 2$, evaluate the following limits:
