@@ -74,7 +74,7 @@ These properties will all be based around some basic operations on functions: ad
   Then:
   \begin{enumerate}
     \item $\dlim_{x\to a} [f(x)\pm g(x)] = \lim_{x\to a} f(x) \pm \lim_{x\to a} g(x)$
-    \item $\displaystyle\lim_{x\to a} cf(x) = c\lim_{x\to a} f(x)$ for any constant multiple (coefficient) $c$.
+    \item $\dlim_{x\to a} cf(x) = c\lim_{x\to a} f(x)$ for any constant multiple (coefficient) $c$.
     \item $\dlim_{x\to a} [f(x)\cdot g(x)] = \left[\lim_{x\to a} f(x)\right] \left[\lim_{x\to a} g(x)\right]$
     \item $\dlim_{x\to a} \frac{f(x)}{g(x)} = \frac{\dlim_{x\to a} f(x)}{\dlim_{x\to a} g(x)}$ if $\dlim_{x\to a} g(x)\neq0$
     \item $\dlim_{x\to a} (f(x))^n = \left(\dlim_{x\to a} f(x) \right)^n$ for positive integers $n$.
@@ -95,11 +95,99 @@ These properties will all be based around some basic operations on functions: ad
   \end{enumerate}
 \end{note}
 
-\begin{note}{Examples}
-  Given $\dlim_{x\to 1} f(x) = 4$ and $\dlim_{x\to 1} g(x) = 2$, evaluate the following limits:
-  \begin{enumerate}
-    \item $\dlim_{x\to 1}\dfrac{f(x)-g(x)}{f(x)}$
-    \item $\dlim_{x\to 1} \sqrt{g(x)^2+f(x)^2}$
-    \item $\dlim_{x\to 1} 3f(x)+\dfrac{2g(x)}{5}$
-  \end{enumerate}
+\subsection*{Examples}
+Given $\dlim_{x\to 1} f(x) = 4$ and $\dlim_{x\to 1} g(x) = 2$, evaluate the following limits:
+\begin{enumerate}
+  \item $\dlim_{x\to 1}\left(\dfrac{f(x)-g(x)}{f(x)}\right)$
+
+  When we consider $\dlim_{x\to 1}\left(\dfrac{f(x)-g(x)}{f(x)}\right)$, we should notice that the function $\dfrac{f(x)-g(x)}{f(x)}$ is really a combination of the two functions that we have information about.
+  The operations are subtraction and division.
+  We can use the properties above to re-write this limit:
+
+  \begin{align*}
+    \lim_{x\to 1}\left(\dfrac{f(x)-g(x)}{f(x)}\right) &= \frac{\dlim_{x\to 1} (f(x)-g(x))}{\dlim_{x\to 1} f(x)} & \text{Division Property (Property 4)}\\
+    & = \frac{\left(\dlim_{x\to 1} f(x)\right)- \left(\dlim_{x\to 1} g(x)\right)}{\dlim_{x\to 1} f(x)} & \text{Difference Property (Property 1)}
+  \end{align*}
+
+  Now, we notice that we can input the values above, since we know that $\dlim_{x\to1} f(x) = 4$\footnote{Notice that since $\dlim_{x\to1}f(x)\neq0$, we're allowed to put this value in the denominator. Remember, we can't evaluate a limit using these properties if there's division by 0.} and $\dlim_{x\to 1}g(x) = 2$.
+
+  \begin{align*}
+    \frac{\left(\dlim_{x\to 1} f(x)\right)- \left(\dlim_{x\to 1} g(x)\right)}{\dlim_{x\to 1} f(x)} & = \frac{4-2}{4}\\
+    &= \frac{2}{4} = \frac12
+  \end{align*}
+
+  So we can see that $\dlim_{x\to 1}\left(\dfrac{f(x)-g(x)}{f(x)}\right) = \frac{1}{2}$.
+
+  \item $\dlim_{x\to 1} \left(3f(x)+\dfrac{2(g(x))^3}{5}\right)$
+
+  Here, we have two functions added together, an exponent on one, and coefficients on each. We can again use the properties above.
+  Again, we'll use the properties above:
+
+  \begin{align*}
+    \dlim_{x\to 1} \bigg( 3f(x) &\left.+\dfrac{2(g(x))^3}{5}\right) \\
+    & = \left(\dlim_{x\to 1} 3f(x)\right) + \left(\dfrac{2(g(x))^3}{5}\right) & \text{Sum Property (Property 1)}\\
+    &= 3\left(\dlim_{x\to 1} f(x)\right) + \dfrac{2}{5}\left(\dlim_{x\to1} (g(x))^3 \right) & \text{Coefficient Property (Property 2)}\\
+    & = 3\left(\dlim_{x\to 1} f(x)\right) + \dfrac{2}{5}\left(\dlim_{x\to 1}g(x)\right)^3 & \text{Exponent Property (Property 5)}
+  \end{align*}
+
+  Again, we can input the values above, since $\dlim_{x\to1} f(x) = 4$ and $\dlim_{x\to 1}g(x) = 2$ are given.
+
+  \begin{align*}
+    3\left(\dlim_{x\to 1} f(x)\right) + \dfrac{2}{5}\left(\dlim_{x\to 1}g(x)\right)^3 & =3(4) + \dfrac{2}{5}(2)^3 \\
+    &= 12 + \dfrac{2}{5}(8) = 12 + \dfrac{16}{5}\\
+    & = \dfrac{76}{5}
+  \end{align*}
+
+  So the limit $\dlim_{x\to 1} \left(3f(x)+\dfrac{2(g(x))^3}{5}\right) = \dfrac{76}{5}$.
+\end{enumerate}
+
+We can see that these limit laws are very helpful for building our limit ``piece-by-piece.''
+What happens, though, when we have some function or combination of functions that involves an operation or function type that is not covered in these properties?
+What about functions involving trigonometric functions, exponentials, logarithms, etc.?
+What about exponents that are not integers?
+We'll investigate square roots next.
+\begin{note}{Remember}
+  Roots and radicals can be written as fraction exponents.
+  \[\sqrt{x} = x^{1/2}\]
 \end{note}
+
+\subsection*{Square Roots}
+
+Let's consider the function $y=\sqrt{x}$.
+Specifically, we'll consider $\dlim_{x\to 0} \sqrt{x}$.
+
+In the spirit of this chapter, we should start with numerical and graphical esimations.
+
+\subsubsection*{Graphical Approximation}
+
+Let's consider the graph of $y=\sqrt{x}$ around $x=0$.
+
+% Image of graph.
+
+
+
+\subsubsection*{Numerical Approximation}
+
+\textbf{Left-Sided Limit}
+
+\begin{tabular}{ccccc} \toprule
+  $\bm{x}$ & $-0.5$ & $-0.1$ & $-0.01$ & $-0.001$ \\ \midrule
+  $\bm{\sqrt{x}}$ & $\sqrt{-0.5}$ & $\sqrt{-0.1}$ & $\sqrt{-0.01}$ & $\sqrt{-0.001}$\\ \bottomrule
+\end{tabular}
+
+\begin{flushright}
+  \textbf{Right-Sided Limit}
+
+  \begin{tabular}{ccccc} \toprule
+    $0.001$ & $0.01$ & $0.1$ & $0.5$ & $\bm{x}$ \\ \midrule
+    $\sqrt{0.001}$ & $\sqrt{0.01}$ & $\sqrt{0.1}$ & $\sqrt{0.5}$ & $\bm{\sqrt{x}}$ \\ \bottomrule
+  \end{tabular}
+\end{flushright}
+
+We should notice the strange behavior here, specifically with the left-sided limit.
+
+None of those outputs are real numbers.
+Strange.
+
+On a different note, the right-sided limit looks like it's approaching 0.
+All of those square roots are getting progressively smaller as $x$ gets closer to 0.
