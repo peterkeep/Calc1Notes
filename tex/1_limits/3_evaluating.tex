@@ -1,6 +1,54 @@
 \section{Techniques for Evaluating Limits}
 
 
+To start, then, two easy limits.
+
+\subsection*{Two Easy Limits}
+\begin{enumerate}
+  \item Let $f(x) = k$, where $k$ is some real number.
+  Then $\dlim_{x\to a} k = k$.
+
+  \begin{describe}{\textit{Explanation}}
+    This function is a constant function, meaning that every output of the function is $k$, no matter what the input is.\\
+
+    That means that for every $x$, $f(x) = k$. So then for all $x$ that are close to $a$, $f(x) = k$.\\
+
+    So $f(x)$ is arbitrarily close to $k$ (in fact, it's equal to $k$) for all $x$ sufficiently close to, but not equal to, $a$.\\
+
+    Visually, we can see some graphical evidence of this.
+    \begin{figure}[h!tb]
+      \includegraphics[scale=0.5]{./1_limits/images/1-2_graph1.png}
+      \centering
+    \end{figure}
+  \end{describe}
+  \item Let $f(x) = x$. Then $\dlim_{x\to a} x = a$.
+
+  \begin{describe}{\textit{Explanation}}
+    This function is the identity function, meaning that every output of the function is the same as the input.\\
+
+    Then, when $x$ is close to $a$, $f(x) = x$ is also close to $a$.
+    In fact, $f(x)$ is as close to $a$ as $x$ is, since they're the same thing.
+    Thus, $f(x)$ is arbitrarily close to $a$ whenever $x$ is sufficiently close to $a$.\\
+
+    Visually, we can see some graphical evidence of this.
+    \begin{figure}[h!tb]
+      \includegraphics[scale=0.5]{./1_limits/images/1-2_graph2.png}
+      \centering
+    \end{figure}
+  \end{describe}
+\end{enumerate}
+
+\begin{note}{Examples}
+  There really isn't much to do here, since once you've seen a couple of these examples, you've essentially seen them all.
+
+  \begin{enumerate}
+    \item $\dlim_{x\to 4} -3 = -3$
+    \item $\dlim_{x\to -8} 7 = 7$
+    \item $\dlim_{x\to -1} x = -1$
+    \item $\dlim_{x\to 15} x = 15$
+  \end{enumerate}
+\end{note}
+
 \begin{note}{Examples}
   Notice that polynomials and rational functions become kind of easy:
   \begin{enumerate}
@@ -81,7 +129,7 @@ Then we'll know the limit of our function as $x \to a$.
   We need a function that is greater than $x^2\sin(1/x)$ around $x=0$ and a function that is less than $x^2\sin(1/x)$ around $x=0$.
 
   \textbf{\textit{Notice:}}
-  We can put some inequalities around trig functions that might help. 
+  We can put some inequalities around trig functions that might help.
   For any angle $\theta$, we know that $-1\leq \sin \theta \leq 1$.
   So if the angle $\theta = 1/x$, then we know that $-1\leq \sin(1/x) \leq 1$.
 

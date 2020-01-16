@@ -12,57 +12,7 @@
 
 We've estimated limits numerically and graphically, but these can be difficult without more tools at our disposal.
 Here we'll build up some analytic methods of evaluating limits.
-We'll start by analyzing two specific functions, and build two limit laws for those specific functions.
-
-Then, we'll build some general limit laws for any function.
-
-To start, then, two easy limits.
-
-\subsection*{Two Easy Limits}
-\begin{enumerate}
-  \item Let $f(x) = k$, where $k$ is some real number.
-  Then $\dlim_{x\to a} k = k$.
-
-  \begin{describe}{\textit{Explanation}}
-    This function is a constant function, meaning that every output of the function is $k$, no matter what the input is.\\
-
-    That means that for every $x$, $f(x) = k$. So then for all $x$ that are close to $a$, $f(x) = k$.\\
-
-    So $f(x)$ is arbitrarily close to $k$ (in fact, it's equal to $k$) for all $x$ sufficiently close to, but not equal to, $a$.\\
-
-    Visually, we can see some graphical evidence of this.
-    \begin{figure}[h!tb]
-      \includegraphics[scale=0.5]{./1_limits/images/1-2_graph1.png}
-      \centering
-    \end{figure}
-  \end{describe}
-  \item Let $f(x) = x$. Then $\dlim_{x\to a} x = a$.
-
-  \begin{describe}{\textit{Explanation}}
-    This function is the identity function, meaning that every output of the function is the same as the input.\\
-
-    Then, when $x$ is close to $a$, $f(x) = x$ is also close to $a$.
-    In fact, $f(x)$ is as close to $a$ as $x$ is, since they're the same thing.
-    Thus, $f(x)$ is arbitrarily close to $a$ whenever $x$ is sufficiently close to $a$.\\
-
-    Visually, we can see some graphical evidence of this.
-    \begin{figure}[h!tb]
-      \includegraphics[scale=0.5]{./1_limits/images/1-2_graph2.png}
-      \centering
-    \end{figure}
-  \end{describe}
-\end{enumerate}
-
-\begin{note}{Examples}
-  There really isn't much to do here, since once you've seen a couple of these examples, you've essentially seen them all.
-
-  \begin{enumerate}
-    \item $\dlim_{x\to 4} -3 = -3$
-    \item $\dlim_{x\to -8} 7 = 7$
-    \item $\dlim_{x\to -1} x = -1$
-    \item $\dlim_{x\to 15} x = 15$
-  \end{enumerate}
-\end{note}
+We'll start by building some general limit laws for any function.
 
 \subsection*{Limit Laws In General}
 
@@ -77,7 +27,7 @@ These properties will all be based around some basic operations on functions: ad
     \item $\dlim_{x\to a} cf(x) = c\lim_{x\to a} f(x)$ for any constant multiple (coefficient) $c$.
     \item $\dlim_{x\to a} [f(x)\cdot g(x)] = \left[\lim_{x\to a} f(x)\right] \left[\lim_{x\to a} g(x)\right]$
     \item $\dlim_{x\to a} \frac{f(x)}{g(x)} = \frac{\dlim_{x\to a} f(x)}{\dlim_{x\to a} g(x)}$ if $\dlim_{x\to a} g(x)\neq0$
-    \item $\dlim_{x\to a} (f(x))^n = \left(\dlim_{x\to a} f(x) \right)^n$ for positive integers $n$.
+    \item $\dlim_{x\to a} (f(x))^n = \left(\dlim_{x\to a} f(x) \right)^n$ for integers $n$. (If $n<0$, there's actually division going on: make sure you don't divide by 0.)
   \end{enumerate}
 \end{imp}
 
@@ -143,9 +93,9 @@ Given $\dlim_{x\to 1} f(x) = 4$ and $\dlim_{x\to 1} g(x) = 2$, evaluate the foll
 
 We can see that these limit laws are very helpful for building our limit ``piece-by-piece.''
 What happens, though, when we have some function or combination of functions that involves an operation or function type that is not covered in these properties?
-What about functions involving trigonometric functions, exponentials, logarithms, etc.?
-What about exponents that are not integers?
-We'll investigate square roots next.
+
+One last thing to think about is a more generlized property for exponents.
+Our property above only holds for integer exponents.
 \begin{note}{Remember}
   Roots and radicals can be written as fraction exponents.
   \[\sqrt{x} = x^{1/2}\]
@@ -162,7 +112,10 @@ In the spirit of this chapter, we should start with numerical and graphical esim
 
 Let's consider the graph of $y=\sqrt{x}$ around $x=0$.
 
-% Image of graph.
+\begin{figure}
+  \includegraphics[scale=0.5]{./1_limits/images/1-2_graph3.png}
+  \centering
+\end{figure}
 
 
 
@@ -189,5 +142,4 @@ We should notice the strange behavior here, specifically with the left-sided lim
 None of those outputs are real numbers.
 Strange.
 
-On a different note, the right-sided limit looks like it's approaching 0.
-All of those square roots are getting progressively smaller as $x$ gets closer to 0.
+On a different note, the right-sided limit looks like it's approaching 0, whether we're thinking about the graphical approximation or the numerical approximation.
