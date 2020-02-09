@@ -1,20 +1,18 @@
 \section{Continuity}
 
-Earlier, we classified polynomial and rational functions as ``easy'' limits (we could just check the function outputs for the limits).
-We'll expand that definition of ``easy'' limits here with a more formal definition of continuity.
-
-What does continuity mean? What does it look like? What does it look like to ``break'' continuity?
+We've seen that some functions have limits that are fairly easy: for polynomials and rational functions, limits are essentially the same thing as function values (as long as we don't divide by 0).
+We'll investigate this a bit more formally, by talking about what it means for a function to be continuous\footnote{An interesting note about continuity: there is no such thing as a ``continuous function'' without talking about \textit{where} the function is continuous. A function is continuous at specific points, on intervals, on their domains, etc.}.
 
 \begin{defn}{Continuity at a Point}
-  A function is continuous at a point $a$ if $\dlim_{x\to a}f(x) = f(a)$.
-  If this equality doesn't hold, we'll call $a$ a \textbf{point of discontinuity}.
+  For a funtion $f$, we say that $f$ is continuous at the point $x=a$ if $\dlim_{x\to a} f(x) = f(a)$.
+  If this equality doesn't hold ($\dlim_{x\to a} f(x) \neq f(a)$), then we say $x=a$ a \textbf{point of discontinuity} on $f$.
 \end{defn}
 
 \begin{note}{Note}
-  The the continuity limit equality to hold, we need three things to be true:
+  For the continuity limit equality to hold, we need three things to be true:
   \begin{enumerate}
     \item $f(a)$ is defined ($a$ is in the domain of $f$)
-    \item $\dlim_{x\to a}f(x)$ exists ($\dlim_{x\to a^-} f(x) = \dlim_{x\to a^+} f(x)$)
+    \item $\dlim_{x\to a}f(x)$ exists ($\dlim_{x\to a^-} f(x) = \dlim_{x\to a^+} f(x) = L$ for some real number $L$)
     \item $\dlim_{x\to a}f(x) = f(a)$ (limit and function value are the same).
   \end{enumerate}
 \end{note}
